@@ -2,7 +2,7 @@ package com.javaex.basic.conditional;
 
 import java.util.Scanner;
 
-public class switchEx {
+public class SwitchEx {
 
 	public static void main(String[] args) {
 		// 스캐너열기
@@ -29,9 +29,9 @@ public class switchEx {
 				System.out.println("관리자에게 문의하세요");
 				break;
 			}
-		
+		scanner.close();         
 		}
 		//스캐너 닫기
 		
-		Scanner.close();	
+		
 }
