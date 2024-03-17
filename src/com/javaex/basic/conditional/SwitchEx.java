@@ -31,7 +31,7 @@ public class SwitchEx {
 			}
 		scanner.close();         
 		}
-		//스캐너 닫기
+		//스캐너 닫기 ㅇㅇ
 		
 		
 }
