@@ -40,7 +40,7 @@ public class SwitchEx2 {
 		
 		System.out.println(month + "월은 " 
 								+ message);
-		scanner.close();
+		scanner.close();// 스캐너와 출력사인은 순서 바꿔도 상관없음 어차피 둘다 기능을 할거기 때문 그리고 위에처럼 한번에 다 해놓고 출력하는것이 더 효율적
 	}
 		
 }
