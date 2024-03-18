@@ -10,7 +10,7 @@ public class DoWhileEx {
 	public static void main(String[] args) {
 		
 		// 합산변수
-		int total = 0, num;
+		int total = 0, num; // int라는 타입에다 total변수와 num변수 선언하는거임
 		
 		// 스케너열고 
 		Scanner scanner = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class DoWhileEx {
 		//0이면 합산종료
 		//0이 아니면 입력계속 받기
 		} while (num != 0);
-		
+		System.out.println("총 합은 " + total + " 입니다"); // 출력문도 추가해주기
 		//스케너 닫기
 		scanner.close();
 
