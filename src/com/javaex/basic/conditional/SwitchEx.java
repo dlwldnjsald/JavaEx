@@ -6,7 +6,7 @@ public class SwitchEx {
 
 	public static void main(String[] args) {
 		// 스캐너열기
-		Scanner scanner = new Scanner(System.in); 
+		Scanner scanner = new Scanner(System.in); //대소문자 주의 S,s
 		//과목번호 입력
 		System.out.println("과목 번호를 입력하세요.");
 		int subj = scanner.nextInt();
@@ -25,13 +25,13 @@ public class SwitchEx {
 			case 4: // subj == 4 //case는 항상 스위치 안쪽에 들어가있기
 				System.out.println("R104입니다.");
 				break;		
-			default:// else문 과 같다고 생각하기
+		default:// else문 과 같다고 생각하기
 				System.out.println("관리자에게 문의하세요");
 				break;
-			}
-		scanner.close();         
-		}
-		//스캐너 닫기 ㅇㅇ
+			}// switch문 닫는 표시 } ㅇㅇ
 		
+		scanner.close();  //스캐너 닫기 ㅇㅇ 
 		
-}
+		}// 여기 } 닫는 표시 안에서 스캐너 닫아줘야함 위치 주의하자ㅇㅇ       
+		
+}// 클래스 닫는 표시 } ㅇㅇ
