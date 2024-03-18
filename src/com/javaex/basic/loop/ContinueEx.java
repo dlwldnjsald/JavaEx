@@ -1,5 +1,4 @@
 package com.javaex.basic.loop;
-
 public class ContinueEx {
 		// 1~20 까지 루프를 설정
 		// 2의 배수와 3의 배수는 출력 안함: 1,5,7,11,13,17,19 출력하고싶단얘기
@@ -10,7 +9,7 @@ public class ContinueEx {
 		
 		for (int i = 1; i <= 20; i += 1) { // for문은 반복문 일정한 횟수를 정해놓고 계속 반복하는거야 계속 로테이트개념.
 			if (i % 2 == 0 || i % 3 == 0)
-				continue; // 다음 루프로				
+		continue; // 다음 루프로				
 			System.out.println(i); //두개가 다 false여야만 출력이 됨 주의 
 		}
 			//스캐너 import,열지않았으니 닫을필요도없음.
