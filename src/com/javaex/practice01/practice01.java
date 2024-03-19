@@ -1,3 +1,13 @@
+package com.javaex.practice01;
+
+public class practice01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
 //
 //Ex01.java > 2)float
 //Ex02.java > 
