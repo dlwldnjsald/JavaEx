@@ -4,8 +4,8 @@
  * 여러줄 주석
  */
 public class HelloWorld {
-   public static void main(String[] args) {
-       System.out.println("Hello, Java");
-	     // 화면에 Hello, Java를 출력한다
+   public static void main(String[] args) { 
+       System.out.println("Hello, Java"); // 출력한다는 표시이다
+	     //화면에 Hello, Java를 출력한다 
    }
 }
