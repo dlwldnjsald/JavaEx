@@ -1,5 +1,5 @@
 package com.javaex.basic.loop;
-import java.util.Scanner; //스케너impot
+import java.util.Scanner; //스케너 import
 public class ForLoopEx { //클래스열기
 	// 단을 입력
 	// for 루프로 1-9 까지 반복
@@ -12,7 +12,7 @@ public class ForLoopEx { //클래스열기
 		System.out.println("단을 입력하세요.");// 단 입력하세요 고객에게 문장 출력하여 입력 명령
 		dan = scanner.nextInt(); // 정수형 데이터를 스캐너를 활용해서 단에 할당해주겟다
 		
-			for (num = 1; num <= 9; num++) {  // for (초기화; 반복여부체크; 증감식)
+			for (num = 1; num <= 9; num++) {  // for(초기화시키기; 조건검사연산; 증감연산)
 			// 1~9까지 반복 되는 부분
 				System.out.println(dan + "*" + num + "=" + (dan * num));// 결과 출력
 	        }
