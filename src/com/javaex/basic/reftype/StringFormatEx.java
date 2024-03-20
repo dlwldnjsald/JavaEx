@@ -29,7 +29,7 @@ public class StringFormatEx {
 		System.out.printf("%,d%n", amount);
 		
 //		double pi = Math.PI;  //선언과동시 할당
-//		System.out.printf("PI: %f%n",  pi);
+//		System.out.printf("PI: %f%n",  pi); //이렇게 쓰면 3.14.... 쭉나열됨
 		double pi = Math.PI;  //선언과동시 할당
 		System.out.printf("PI: %.2f%n",  pi);  //소수점 2째 자리까지 출력됨
 		
@@ -37,7 +37,8 @@ public class StringFormatEx {
 		String fmt = "%d개의 %s 중에서 %d개를 먹었다%n";  //포맷 문자를 미리 만들어도됨
 		System.out.println(fmt.formatted(10, "바나나" , 2)); 
 		
-		
 	}
 
 }
+
+
