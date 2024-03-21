@@ -24,7 +24,7 @@ public class MethodEx {
 //		double sum = getSum(num1, num2);       //4-(1) 를 사용할경우
 		double sum = getSum(num1, num2, 6);    //4-(2) 를 사용할경우
 		
-		System.out.println(sum);				//출력
+		System.out.println(sum);				//출력dfdffddf
 	
 		
 	}
