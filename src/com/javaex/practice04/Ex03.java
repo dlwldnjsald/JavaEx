@@ -1,18 +1,25 @@
 package com.javaex.practice04;
 
 public class Ex03 {
+	
 
 	public static void main(String[] args) {
 		
-		int[] intA = {3,6,9};
+		int[] intA = {3,6,9};        //intA라는 정수형 배열에 3,6,9 데이터가 들어간 상태 갯수는 3개이고 length길이는 3공간의 배열
 		
-		int[] intB;
-		intB = intA;
-		intB[0] = 20;
-		intB[2] = 10;
+		int[] intB;					//intB라는 정수형배열을 선언을 해주고 ,
+		intB = intA;				//intA라는 정수형배열의 데이터값이 intB라는 곳에 할당이 된다 들어가게 된다.
 		
-		for(int i =0; i<intA.length; i++) {
-			System.out.println(intA[i]);	
+		intB[0] = 20;				//intB배열의 0번 인덱스 데이터값이 20이고,  
+		intB[2] = 10;				//2번 인덱스 데이터값이 10이 할당 되었을때,
+		
+		for(int i =0; i<intA.length; i++) {    //for문을 사용해서 반복문을 통해 총 몇번 루프를 돌려줘서 위의 데이터값을 출력할거냐에대한 코드를 짜는게 목표니까,
+			System.out.println(intA[i]);	   //for문은 반복하려고 쓰는건데 ,0부터 시작해서 인덱스 2까지 총 3번돌게됨
+											//어쨌든 intA배열을 intB배열에 할당하게되면 ,, 총3번 루프를 돌고 3개의 값이 나오게 되서 
+													//20
+													//6
+													//10
+													//으로 출력이 됨
 		}
 
 	}

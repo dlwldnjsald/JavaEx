@@ -48,7 +48,7 @@ package com.javaex.basic.loop;
 public class BreakEx {
 	//6으로나눳을때 나머지 0 14로 나눴을때 나머지 0인 정수 찾기
 	public static void main(String[] args) {
-		forLotto(); 
+		forLotto();    //있어야 부를수있기때문에 불러와야댐
 		
 		
 			for (int i = 0; i< 6; i++) {
