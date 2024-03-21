@@ -6,10 +6,10 @@ public class ArrayCopyEx {
 	//배열은 크기 변경이 불가하기때문에 공간을 늘리고자 한다면 새 배열을 생성후 복사해줘야 한다 주의
 	public static void main(String[] args) {
 		//(1)For 문을 이용한 배열 복사
-//		arrayCopyByFor(); 	//이것 먼저 선언해서 create method 한후 코드작성해야함 잊지말기 주의
+		arrayCopyByFor(); 	//이것 먼저 선언해서 create method 한후 코드작성해야함 잊지말기 주의
 		
 		//(2)System을 이용한 배열 복사 //이걸 사용할때는 위에 (1)선언한거 잠시 주석처리해서 사용
-		arrayCopyBySystem(); //우선 이름부터 만들고 메서드 만들기
+	//	arrayCopyBySystem(); //우선 이름부터 만들고 메서드 만들기
 		
 	}
 	
