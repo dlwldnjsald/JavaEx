@@ -1,5 +1,5 @@
 
-//3/20 강의문 
+//3/21 강의문 
 /*  OOP 객체지향 프로그래밍이란
  * 	컴터 프로그램을 여러개의 독립된 단위(객체)들의 모임으로 파악하는것 
  * 
@@ -165,22 +165,36 @@ carArray[2] = fork1;
 public class Car {  //클래스 헤더 
 
 	private String name;		->내부 필드
-	private int speed;			//필드(데이터)//private는 나만 쓸수있다는표시
+	private int speed;			//필드(데이터)//private는 나만 쓸수있다는표시 /1)필드 private.을 만든다
+	
 	
 	public Car(){ }
 	
 	public Car(String name, int speed){
 		this.name=name;
 		this.speed=speed;
-	}										// 여기까지 생성자
+	}										//2) 여기까지 생성자 ->기본생성자 & 공용 생성자를 만든다
+
 
 	public void setName( String name ) {  //외부파라미터 외부로부터 name이란 값을 전달받음
 		this.name = name;                 //this(인스턴스자신) name은 외부로부터 전달받은 네임을 할당받는다
 	}
+	
 	public String getName() {
 		return name;
-	}										//메소드						
+	}									//우회 접근을 위한 게터,세터를 만든다 set,get// 이후 추가 메소드	...	
+	
+												
 }
+
+
+
+ 
+
+
+
+이후의 부가적인 메소드를 구현한다는 
+큰 틀을 잡고 가기.
  * ================================================================= 
  *  필드
  *  필드는 객체의 데이터, 상태를 저장하는 변수이며
@@ -205,8 +219,8 @@ package com.javaex.oop.goods.v1;
 public class Goods {
 	
 	//필드 선언해주기
-	String name;	//상품명
-	int price;		//가격
+	 String name;	//상품명 /문자열 name 변수 선언
+	 int price;		//가격	/정수형 price 변수 선언
 	
 	//이후 GoodsApp 클래스를 따로 만들러가기->->->
 }

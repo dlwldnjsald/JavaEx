@@ -1,5 +1,6 @@
 
 //3/20 강의문 
+
 /*  OOP 객체지향 프로그래밍이란
  * 	컴터 프로그램을 여러개의 독립된 단위(객체)들의 모임으로 파악하는것 
  * 
@@ -213,82 +214,85 @@ Goods 클래스를 정의하고 GoodsApp 클래스에서 Goods 클래스를 테�
  * =========================================
  */
 
+//0322
+
+/*Getter, Setter
+* 일반적으로 객체의 데이터는 객체 외부에서 직접적으로 접근하는 것을 막는다.
+객체의 외부에서 객체 내부의 데이터를 마음대로 읽고 쓸 경우 데이터의 무결성을 보장하기 힘들기 때문이다.
+메소드를 통한 접근을 하게 되면 객체의 데이터를 변경할 경우 무결성 체크를 할수 있다.
+✓ 클래스를 정의할 때 필드는 private로 하여 객체 내부의 정보를 보호하고(정보은닉)
+필드에 대한 Setter와 Getter를 두어 객체의 값을 변경하고 참조하는 것이 좋다.
+– 외부에서 읽기만 가능하게 하기 위해선 Getter만 해당 필드에 대해서만 작성하면 된다.
+– 외부에서 쓰기만 가능하게 하기 위해선 Setter만 해당 필드에 대해서만 작성하면 된다.
+– Getter와 Setter가 없으면 객체 내부 전용 변수가 된다.
+– 보통 Getter는 getXXX로 명명하지만, 필드 타입이 boolean인 경우 isXXX로 명명하는 것이
+관례
+
+* 
+*
+*
+*
+*
+*
+*/
+
+
 package com.javaex.oop.goods.v2;
 
 // v2. private
 public class Goods {
 	
 	//필드 선언해주기
-	private String name;	//상품명
+	// instance 영역
+	private String name;	//상품명 string name선언 앞에 private가 들어감(goodsapp으로 접근불가)
 	private int price;		//가격
 	
 	//이후 GoodsApp 클래스를 따로 만들러가기->->->
+	
+	//위에서 private를 선언했기때문에 GoodsApp클래스로 가면 오류가 뜨지만
+	//Getter와 Setter를 이용해서 get,set설정 해주면 외부에서 읽고/ 쓰기만 설정을 가능하게 할수 있음
+	
+	//0322
+	//Getter 와 Setter-----------------------
+	public String getName() {
+		//메서드 영역 
+		return name;
+	}
+	
+    public void setName(String name) {
+    	this.name = name;
+    }//------------------------------------
+    
+    public int getPrice() {
+    	return price;
+    }
+    
+    public void setPrice(int price) {
+    	//getter/setter를 활용하면 무결성 체크,
+    	//인증 체크 같은 로직을 수행 가능 
+    	if (price < 0) {
+    		this.price = 0;
+    	} else {
+    		this.price = price;
+    	}
+    	
+    }//------------------------------------
+    
+    
+    //일반 메서드
+    public void showInfo() {	//정보출력을 위함
+    	System.out.printf("상품 이름: %s%n가격: %,d%n", name, price);
+    }
+    
+    
+    
 }
 
-/*===============================================
- * 메서드
- * 
- * 객체의 기는 또는 행동을 정의한다
- * 정의방법>
- * public int getSum( int i, int j ) {
-		int result = i + j;
-		return result;
-   }
-   //
-   접근지정자 리턴타입 메서드이름( 메서드인자 i, 메서드인자 j) {
-   		(구현코드);
-   		(리턴문);
-   으로 해석하면 된다
-   
- * 호출방법>
-  int sum = util.getSum(3, 2);
-  //
-  자료형 변수명 = 레퍼런수변수.메서드명(메서드인자(파라미터)=>ㅇ,ㅇ)
-  으로 해석하면 된다
-  
- * ================================================
- * 매개변수(parameter)
--메서드를 선언할 때 괄호 안에 표현된 Input 값을 나타내는 변수 (type1 name1, type2
-name2, ...)
--메서드 호출에서 들어가는 구체적인 값은 인자(Argument)라고 함
-
-* 반환타입(return type)
--메서드는 0개 혹은 1개의 값을 Output으로 반환할 수 있음
-반환 값이 없을 때: void
-반환 값이 있을 때: int, boolean, Goods, ...
-반환 되는 값은 메서드 선언에서 정의된 반환 타입과 일치해야 함
 
-*메서드 이름
--자바의 식별자 규칙 대/소문자, 숫자, _, $ 조합하여 지을 수 있고 숫자로 시작할 수 없다.
--관례에 따라 소문자로 작성하고 두 단어가 조합될 경우 
-두 번째 시작문자는 대문자로 짓는다.
--메서드 명은 기능을 쉽게 알 수 있도록 작성하는 것이 좋다
- *
- * ================================================
- * 가변인수
--메소드의 매개 변수의 개수를 알 수 없을 때 사용
--가장 간단한 해결방법은 매개변수를 배열로 선언하는 것
-double sum(double[] values) { }
 
-이러한 경우, 메소드 호출시 배열을 넘겨주어 여러 개의 값을 전달할 수 있다
-double[] numbers= { 1, 2, 3, 4, 5 };
-double result = sum(numbers);
-double result = sum(new double[] { 1, 2, 3, 4, 5 });
 
-방법 2: 매개 변수를 ... 를 이용하여 선언
-자동으로 배열이 생성되고 매개값으로 사용된다
-double sum(double ... values) { }
 
-double result = sum(1, 2, 3, 4, 5 );
- * 
- * 
- * 
- * 
- * 
- * 
- * 
-		
-*/
+
 
 
 
