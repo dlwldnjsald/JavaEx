@@ -2,7 +2,7 @@ package com.javaex.oop.methods;
 
 public class MethodEx {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {     //
 		// 4가지 케이스 구현해보기
 		
 //		1)매개변수 x(입력x) , 리턴 x(출력x)
