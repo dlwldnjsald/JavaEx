@@ -1,6 +1,6 @@
 package com.javaex.opp.staticmember;////dd
 
-//static 영역 활용
+//static 영역 활용//ss
 //단 하나의 인스턴스만 유지
 //new Singleton() -> x
 	
