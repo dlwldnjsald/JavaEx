@@ -1,4 +1,4 @@
-package com.javaex.opp.staticmember;////
+package com.javaex.opp.staticmember;////dd
 
 public class SingletonApp {
 
