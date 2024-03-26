@@ -93,9 +93,13 @@ public class TV {
 			System.out.println("전원: 켜짐");
 			System.out.println("현재 채널: "+ channel);
 			System.out.println("현재 음량: " + volume);
-		}	
+		} else {
+			System.out.println("전원: 꺼짐");
+		}
+		System.out.println("--------------------");
+		
 	}
-	
+
 }
 
 
