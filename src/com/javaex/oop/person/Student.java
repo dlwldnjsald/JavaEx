@@ -35,7 +35,7 @@ public class Student extends Person {    //Person클래스를 상속받은 Stude
 				
 			}
 			
-			@override
+			@Override
 			public void showInfo() {
 				super.showInfo();
 				System.out.println("School: " + schoolName);
