@@ -1,8 +1,9 @@
 package com.javaex.oop.methods;
 
-public class MethodEx {
+public class MethodEx {			//클래스 로드하기 
 
-	public static void main(String[] args) {     //
+	public static void main(String[] args) {    //여기서 객체화 하지 않고도 접근할수 있는 static 영역이므로 static을 꼭 써줘야하는 약속
+												//만약 static이 없어지면 main 메서드가 아닌 instance메소드가 되보림 
 		// 4가지 케이스 구현해보기
 		
 //		1)매개변수 x(입력x) , 리턴 x(출력x)
