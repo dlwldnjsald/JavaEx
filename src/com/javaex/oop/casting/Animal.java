@@ -1,3 +1,5 @@
+//0327 
+
 package com.javaex.oop.casting;
 
 //상위클래스 animal, 하위 클래스 cat,dog

@@ -1,3 +1,4 @@
+//0327
 package com.javaex.oop.casting;
 
 public class Cat extends Animal {	//애니몰 클래스 상속받기
