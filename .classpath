@@ -6,5 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/806-26/Downloads/Practice06 (1).zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

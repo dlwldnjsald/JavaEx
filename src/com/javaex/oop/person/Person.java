@@ -8,14 +8,17 @@ public class Person {
 	
 	//---------------------------------------
 	//기본생성자 만들기
-	public Person() {
-		
-	}
+//	public Person() {
+//		
+//	}
 	
 	//----------------------------------------
 	public Person(String name, int age) {
+		super();
 		this.name = name;
 		this.age = age;
+		System.out.println("     Inside Person Constructor");
+		
 	}								//생성자 name,age	
 	//----------------------------------------
 	

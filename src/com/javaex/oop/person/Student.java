@@ -10,26 +10,36 @@ public class Student extends Person {    //Person클래스를 상속받은 Stude
 	//Person클래스에서 기본 생성자인 
     //public Person() { }를 선언했으므로
 	
-	public Student(String schoolName) {
+	public Student(String name, int age, String schoolName) {
+		super(name, age);
 		this.schoolName = schoolName;
 		
+		System.out.println( "   Student (3 parameter))");
 	} //로 작성해주고
-	
-	public Student (String name, int age, String schoolName) {
-		super(name,age);			//부모 생성자 호출하기?
-		this.schoolName = schoolName;
-	
-		
-	}
 	
 	//------------------------------------------------		
 			//getter, setter
-			public String getschoolName() {
-				return schoolName;	 //schoolName를 돌려준다 리턴
+			public Student(String schoolName) {
+				super("Unknown", 0);
+				this.schoolName = schoolName;
+				
+				System.out.println( " stuent (1 parameter))");//schoolName를 돌려준다 리턴
 			}
 			
-			public void setschoolName(String schoolName) {   //리턴이 필요없으므로 void
+			public String getSchoolName() {
+				return schoolName;
+			}
+			
+			public void setSchoolName() {
 				this.schoolName = schoolName;
+				
+			}
+			
+			@override
+			public void showInfo() {
+				super.showInfo();
+				System.out.println("School: " + schoolName);
+				
 			}
     //------------------------------------------------
 			//showInfo() 영역 만들기
