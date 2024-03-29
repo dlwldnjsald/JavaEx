@@ -1,3 +1,7 @@
+//ArithmeticExceptionEx
+
+
+
 //package com.javaex.exception;
 //
 //public class ArithmeticExceptionEx01 {
@@ -14,9 +18,7 @@
 //
 //	}
 //
-//}
-
-//====================================================================
+//} 
 
 
 package com.javaex.exception;

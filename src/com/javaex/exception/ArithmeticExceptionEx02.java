@@ -1,4 +1,3 @@
-
 //package com.javaex.exception;
 //
 //public class ArithmeticExceptionEx02 {
