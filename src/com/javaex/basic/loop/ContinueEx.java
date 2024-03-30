@@ -9,7 +9,7 @@ public class ContinueEx {
 		
 		for (int i = 1; i <= 20; i += 1) { // for문은 반복문 일정한 횟수를 정해놓고 계속 반복하는거야 계속 로테이트개념.
 			if (i % 2 == 0 || i % 3 == 0)
-		continue; // 다음 루프로				
+		continue; // 다음 루프로	//for문->안에 continue문이 선언되 있으면 조건에 부합하지 않으면 컨티뉴문 아래 실행되지 않고 다음루프를 돌게 된다 		
 			System.out.println(i); //두개가 다 false여야만 출력이 됨 주의 
 		}
 			//스캐너 import,열지않았으니 닫을필요도없음.

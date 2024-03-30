@@ -107,15 +107,17 @@ public class ArrayCopyEx {
 //}
 //==============================================================================
 
-//(3)enhanced for문 (for loop) 교안 
+////(3)enhanced for문 (for loop) 교안 
 //char vowels[] = { 'a', 'e', 'i', 'o', 'u' };
-//for (char vowel: vowels) {
-//System.out.print(vowel + " ");
+//
+//for (char vowel: vowels) {			//vowels 라는  char형 배열에 있는 여러 캐릭터 데이터들을 하나씩 빼서 사용 하겠다
+//	System.out.print(vowel + " ");
 //}
-//System.out.println();
+//
+//	System.out.println();
 //}
 //}
-
+//
 
 
 

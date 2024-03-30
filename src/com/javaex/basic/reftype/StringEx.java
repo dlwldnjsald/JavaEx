@@ -27,30 +27,30 @@
 
 //========================================================================
 
-//package com.javaex.basic.reftype;
-//
-//public class StringEx {
-//
-//	public static void main(String[] args) {   //main 메서드 체크 잊지말기
-//		// 선언 이후 할당, 선언동시할당, 눌null을 이용한 객체생성
-//		String str1;    //1)선언  //스택메모리안에 str1이라는 참조변수가 생성되었다 이제 값 세팅하기
-//		str1 = "Java";  //할당	//
-//		
-//		String str2 = "Java";	//2)선언후 할당하는것 
-//		
-//		String str3 = new String("Java");   
-//			
-//		// 요 위에 세 참조변수는 같은값을 가지고있다
-//		// 참조변수의 경우 ==은 메모리 주소의 비교이다
-//		System.out.println(str1 == str2);     // true로 출력될것
-//		System.out.println(str2 == str3);	  // false로 출력될것	
-//		
-//		// 값의 비교는 .equals 메서드 이용한다 //참조자료형의 값의 비교는 거의무조건 .equals 쓴다보면됨
-//		System.out.println(str1.equals(str2));   
-//		System.out.println(str2.equals(str3));  //어떤게 주체가 되느냐도 주의
-//	}
-//
-//}
+package com.javaex.basic.reftype;
+
+public class StringEx {
+
+	public static void main(String[] args) {   //main 메서드 체크 잊지말기
+		// 선언 이후 할당, 선언동시할당, 눌null을 이용한 객체생성
+		String str1;    //1)선언  //스택메모리안에 str1이라는 참조변수가 생성되었다 이제 값 세팅하기
+		str1 = "Java";  //할당	//
+		
+		String str2 = "Java";	//2)선언후 할당하는것 
+		
+		String str3 = new String("Java");   //자바라는 데이터를 갖고있는 변수가 새로운 공간으로 저장되있는 상태기때문에 새로운 주소를 갖고있으므로 위의 자바 메모리 주소와 다름
+			
+		// 요 위에 세 참조변수는 같은값을 가지고있다
+		// 참조변수의 경우 ==은 메모리 주소의 비교이다
+		System.out.println(str1 == str2);     // true로 출력될것
+		System.out.println(str2 == str3);	  // false로 출력될것	
+		
+		// 값의 비교는 .equals 메서드 이용한다 //참조자료형의 값의 비교는 거의무조건 .equals 쓴다보면됨 // data값의 비교는 a.equals(b) 형태로 비교해준다
+		System.out.println(str1.equals(str2));   
+		System.out.println(str2.equals(str3));  //어떤게 주체가 되느냐도 주의
+	}
+
+}
 
 
  

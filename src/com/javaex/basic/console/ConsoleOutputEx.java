@@ -3,9 +3,11 @@ package com.javaex.basic.console;
 public class ConsoleOutputEx {
 
 	public static void main(String[] args) {
+		
 		// System.out.println : 출력 후 개행
 		//	System.out.print : 출력 후 개행 안함
 		//	System.out.printf : 형식 지정 문자열 출력
+		
 		System.out.print("Hello ");
 		System.out.println("Java");
 		

@@ -5,11 +5,12 @@ public class DoWhileEx {
 	// 정해지지 않은 수의 정수를 입력,합산
 	//0이 입력되면 종료
 	public static void main(String[] args) {
+
 		
 		// 합산변수
-		int total = 0, num; // int라는 타입에다 total변수와 num변수 선언하는거임
+		int total = 0, num; // int라는 타입에다 total변수와 num변수 선언하는거임 total은 선언과 동시에 초기화, num은 선언만//
 		// 스케너열고 
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in); //스캐너 선언과 초기화 열기 
 		//스케너로부터 정수입력
 			do {
 				System.out.println("정수를 입력하세요 . 0이면 종료:");

@@ -15,7 +15,7 @@ public class SwitchEx {
 		switch (subj) {
 			case 1: //subj == 1 서브젝트가 1과 같다
 				System.out.println("R101입니다.");
-				break;
+				break;													//break표시를 해줘야 누적출력이 안됨 누적출력 방지용!!!
 			case 2: // subj == 2 //case는 항상 스위치 안쪽에 들어가있기
 				System.out.println("R102입니다.");
 				break;		

@@ -27,9 +27,10 @@
  *///package com.javaex.basic.reftype;
 
 package com.javaex.basic.reftype;
-public class EnumEx {
-	// enum 메서드 테스트
+public class EnumEx { 				//같은 패키지 상에서는 enum클래스를 import 없이도 사용 할수 있음 (퍼블릭으로 접근제한자가 선언되있을시)
+	// enum 메서드 테스트 //값을 정해놓으면 그 클래스를 갖다 쓰는 개념 이건 상속이 아니니까 객체지향과는 전혀 다른 개념 헷갈리지 말것
 	public static void main(String[] args) {
+		
 		Week today = Week.WEDNESDAY;//요일 데이터를 쓰기위해 week 타입 사용
 		
 		System.out.println(today);
