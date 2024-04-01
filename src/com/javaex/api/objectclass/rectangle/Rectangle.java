@@ -26,8 +26,11 @@ public class Rectangle {
 		if (obj instanceof Rectangle) {
 			Rectangle other = (Rectangle) obj; // casting해서 other로 할당되고
 
-			return area() == other.area();// 이 코드로 적어주기 놓침..
+		//1)	return area() == other.area();// 이 코드로 적어주기 놓침..
 			// 기존area와 새로 세팅해주고 할당된area값을 비교한것을 리턴위해 아더로 캐스팅해주는것
+		
+		
+		
 		}
 
 		return super.equals(obj);
