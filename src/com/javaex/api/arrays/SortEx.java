@@ -20,6 +20,7 @@ public class SortEx {
 
 	}//===============================================================
 	
+	@SuppressWarnings("unused")//사용할땐 이것 삭제하고 위의 선언한것 주석해제후 사용가능
 	private static void basicSort() {
 		
 		int[] scores = { 80, 50, 30, 90, 75, 88, 77 };

@@ -1,6 +1,6 @@
 package com.javaex.api.arrays;
 
-public class Member implements Comparable {
+public class Member implements Comparable<Object> { //<object>가 왜 붙어야되는지? 생략해도됨.
 
 	//field
 	String name;
