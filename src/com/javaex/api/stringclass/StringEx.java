@@ -44,14 +44,14 @@ public class StringEx {
 		System.out.println("str: " + str); 
 		
 		System.out.println(); 
-		System.out.println("============================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		//문자열 길이 확인 : .length()
 		System.out.println(".lenght():" + str.length());	//index범위 : 0~ .length()-1 
 		
 		System.out.println();
-		System.out.println("============================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
@@ -60,7 +60,7 @@ public class StringEx {
 		System.out.println("toLowerCase: " + str.toLowerCase()); 	//전부 소문자로
 		
 		System.out.println();
-		System.out.println("============================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
@@ -88,7 +88,7 @@ public class StringEx {
 		System.out.println("lastIndexOf: " + index);
 		
 		System.out.println();
-		System.out.println("===========================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
@@ -98,7 +98,7 @@ public class StringEx {
 		System.out.println("substring: " + str.substring(5,16)); 	//시작인덱스, 끝인덱스(끝부분은 포함안됨) 
 		
 		System.out.println();
-		System.out.println("===========================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
@@ -106,7 +106,7 @@ public class StringEx {
 		System.out.println("replace:" + str.replace("Programming", "Coding"));
 		
 		System.out.println();
-		System.out.println("===========================================");
+		System.out.println("-------------------------------------------------");
 
 
 		
@@ -117,7 +117,7 @@ public class StringEx {
 		System.out.println(str4 + str3);
 		
 		System.out.println();
-		System.out.println("===========================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
@@ -126,7 +126,7 @@ public class StringEx {
 																  //문자열 데이터는 불변(immutable)이다
 																  //여러가지 메서드를 통해 변화가 발생됐더라도 원본은 유지됨
 		System.out.println();
-		System.out.println("===========================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
@@ -139,7 +139,7 @@ public class StringEx {
 			}
 		
 		System.out.println();
-		System.out.println("===========================================");
+		System.out.println("-------------------------------------------------");
 		
 		
 		
