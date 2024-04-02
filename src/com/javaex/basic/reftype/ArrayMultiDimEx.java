@@ -28,9 +28,9 @@ public class ArrayMultiDimEx {
 		System.out.println(table);  // [[I@1f32e575 이렇게 객체의 기본 출력형태로 출력이 됨 ,
 			                            //바꾸는건 나중에 알려주심
 			
-		System.out.println("table.length: " + table.length);//table의 length알아보기 (출력)
+		System.out.println("table.length: " + table.length);//table의 length알아보기 (출력)//세로의 길이)
 		
-		System.out.println("table[0].length: " + table[0].length); //table[0]인덱스의 length 알아보기(출력)
+		System.out.println("table[0].length: " + table[0].length); //table[0]인덱스의 length 알아보기(출력)//가로의 길이)
 	
 		
 		int sum = 0;   //내부 데이터 합산해보기 

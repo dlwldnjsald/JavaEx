@@ -40,7 +40,7 @@ public class SortEx {
 	//=================================================================
 	
 	private static void basicDescSort() {
-		Integer[] scores = { 80, 50, 30, 90, 75, 88, 77 };	//여기서 int[]안되고 Integer[]해야 하는 이유
+		Integer[] scores = { 80, 50, 30, 90, 75, 88, 77 };		//여기서 int[]안되고 Integer[]해야 하는 이유
 		//객체 내부의	compararator로 객체의 선후관계를 규정해야 하기 때문에
 		//프리미티브타입은 역순 정렬 될 수 없다. 주의
 		System.out.println("배열 원본: " + Arrays.toString(scores));
