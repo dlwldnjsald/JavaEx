@@ -12,7 +12,7 @@ public class SortEx {
 //		basicSort();
 		
 		//2. 역순 정렬
-		basicDescSort();
+//		basicDescSort();
 		
 		//3. 사용자 정의 클래스 정렬
 		customClassSort();
@@ -20,7 +20,7 @@ public class SortEx {
 
 	}//===============================================================
 	
-	@SuppressWarnings("unused")//사용할땐 이것 삭제하고 위의 선언한것 주석해제후 사용가능
+	
 	private static void basicSort() {
 		
 		int[] scores = { 80, 50, 30, 90, 75, 88, 77 };
@@ -56,13 +56,13 @@ public class SortEx {
 	//=================================================================
 	
 	private static void customClassSort() {
-		//사용자 저의 클래스의 정렬
-		Member[] members = {			//Member라는 클래스 호출
+		Member[] members = {
 				new Member("홍길동"),
 				new Member("고길동"),
 				new Member("장길산"),
 				new Member("임꺽정")
 		};
+		
 		System.out.println("원본 배열:" + Arrays.toString(members));
 		
 		Arrays.sort(members);								//오름 차순
@@ -73,6 +73,31 @@ public class SortEx {
 		
 	}
 	
-	
+	 static class Member implements Comparable { //<object>가 왜 붙어야되는지? 생략해도됨.
+
+		//field
+		String name;
+		
+		//생성자
+		public Member(String name) {
+			this.name = name;
+		}
+		
+		
+		@Override
+		public String toString() {
+			return "Member [name=" + name + "]";
+		}
+
+		
+		@Override
+		public int compareTo(Object o) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
+		
+		
+	}
 	
 }

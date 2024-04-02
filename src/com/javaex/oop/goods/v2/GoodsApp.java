@@ -63,6 +63,7 @@ public class GoodsApp {
 				mug.getName(),
 				mug.getPrice());
 		
+		//------------이위의 작업을 아래에 showInfo()로 간단히 가능
 		// 상품 정보 출력 (메서드 활용)
 		camera.showInfo();
 		notebook.showInfo();
