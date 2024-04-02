@@ -1,13 +1,15 @@
 package com.javaex.api.stringclass; //
 
+import java.util.Arrays;
+
 public class StringEx {
 
 	public static void main(String[] args) {
 		// 문자열 기본
-		stringBasic();
+//		stringBasic();
 
 		// 문자열의 다양한 메서드
-//		usefulMethods();
+		usefulMethods();
 
 	}// -------------------------------------------------------------------------------
 
@@ -92,22 +94,60 @@ public class StringEx {
 		
 		//부분 문자열 출력하기 : substring
 		System.out.println("str: " + str); 	
-		System.out.println("substring: " + str.substring(5));	//5번부터 끝까지 출력됨  			
-		System.out.println("substring: " + str.substring(5,16)); //5~16 -1 ->5번부터 16번 인덱스 바로 앞까지 부분 범위 출력
+		System.out.println("substring: " + str.substring(5));		//5번부터 끝까지 출력됨  			
+		System.out.println("substring: " + str.substring(5,16)); 	//시작인덱스, 끝인덱스(끝부분은 포함안됨) 
+		
+		System.out.println();
+		System.out.println("===========================================");
+		
+		
+		
+		//치환 : Replace 
+		System.out.println("replace:" + str.replace("Programming", "Coding"));
+		
+		System.out.println();
+		System.out.println("===========================================");
+
+
+		
+		//whitespace(공백,개행, 탭문자) 지우기
+		String str2 ="                Hello                  ";		//화이트 스페이스 존재
+		String str3 =", Java";
+		String str4 = str2.trim(); 									//화이트 스페이스 지우기 메서드
+		System.out.println(str4 + str3);
+		
+		System.out.println();
+		System.out.println("===========================================");
+		
+		
+		
+		//원본 출력
+		System.out.println("원본: " + str);			    	  	  //위에서 아무리 많이 작업했어도 원본 그대로 출력 확인
+																  //문자열 데이터는 불변(immutable)이다
+																  //여러가지 메서드를 통해 변화가 발생됐더라도 원본은 유지됨
+		System.out.println();
+		System.out.println("===========================================");
+		
+		
+		
+		//구분자로 분리 : split()
+		String[] split = str.split(" ");						//공백 문자를 기준으로 문자열을 분리 -> 문자열 배열로 변환
+		
+		System.out.println(Arrays.toString(split));				//->총 4개의 문자열 배열로 분절되어 출력된것을 확인 가능 
+			for (String data: split) {							//위 코드를 4개의 배열로 정리해서 출력
+				System.out.println("조각:" + data);
+			}
+		
+		System.out.println();
+		System.out.println("===========================================");
 		
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//문자열 비교 메서드 : compareTo
+		//문자열 Unicode 비교해서 같으면 0 , 작으면 음수(-1), 크면 양수(1) 
+		System.out.println("ABC".compareTo("ABD"));			//ABC라는 객체1이 ABD라는 객체2보다 ?/작다 -> -1 출력됨
+				
 		
 		
 		
