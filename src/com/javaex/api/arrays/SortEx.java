@@ -3,16 +3,57 @@ package com.javaex.api.arrays;
 import java.util.Arrays;
 import java.util.Collections;
 
+//===================================================================
+//	사용자 정의 클래스를 Sort 하고자 할때, Comparable 인터페이스를 구현 해야 한다.
+class Member implements Comparable {
+
+	//	필드
+	String name;
+	
+	//	생성자
+	public Member(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Member [name=" + name + "]";
+	}
+	
+	@Override //compareTo()메서드 필요함 
+	public int compareTo(Object o) {
+		// 두 객체의 선후 관계를 비교해서 
+		//	-1, 0, 1 return 
+		//	비교 대상이 순서가 동일 : 0
+		// 	순서가 작은 경우 : -1
+		//	순서가 큰 경우 : 1
+		if (o instanceof Member) {
+			Member other = (Member)o;//	Member로 캐스팅 가능
+			return name.compareTo(other.name);//대소 관계의 비교는 name 필드로 비교
+			
+			}
+		return 0;
+		}
+	
+	}
+
+
+
+
+
+//======================================================================
+
 public class SortEx {
 
+	
 	public static void main(String[] args) {
 //		
 //		
 		//1. 기본 소팅(기본 정렬)
-//		basicSort();
+		basicSort();
 		
 		//2. 역순 정렬
-//		basicDescSort();
+		basicDescSort();
 		
 		//3. 사용자 정의 클래스 정렬
 		customClassSort();
@@ -55,6 +96,7 @@ public class SortEx {
 	
 	//=================================================================
 	
+	
 	private static void customClassSort() {
 		Member[] members = {
 				new Member("홍길동"),
@@ -73,31 +115,6 @@ public class SortEx {
 		
 	}
 	
-	 static class Member implements Comparable { //<object>가 왜 붙어야되는지? 생략해도됨.
-
-		//field
-		String name;
-		
-		//생성자
-		public Member(String name) {
-			this.name = name;
-		}
-		
-		
-		@Override
-		public String toString() {
-			return "Member [name=" + name + "]";
-		}
-
-		
-		@Override
-		public int compareTo(Object o) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-		
-		
-		
-	}
+	
 	
 }

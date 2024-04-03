@@ -148,24 +148,7 @@ public class StringEx {
 		//문자열 Unicode 비교해서 같으면 0 , 작으면 음수(-1), 크면 양수(1) 
 		System.out.println("ABC".compareTo("ABD"));			//ABC라는 객체1이 ABD라는 객체2보다 ?/작다 -> -1 출력됨
 				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 	}
 

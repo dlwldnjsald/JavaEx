@@ -40,3 +40,10 @@ public class StringBufferEx {
 	}
 
 }
+
+
+// StringBuilder 와 StringBuffer의 차이점
+//스트링 버퍼는 서로 똑같은 객체를 다룰수 있게 되는 데 
+//중복 접근을 막아줌 내부데이터의 동기화 작업을 수행해 주고 Thread-Safe라고 하는데 안전함
+//싱글 스레드용 멀티 스레드용 다양함
+

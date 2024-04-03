@@ -27,7 +27,7 @@ public class SerachEx {
 		System.out.println("정렬된 배열: " + Arrays.toString(nums)); 
 		System.out.println();
 		
-		int index = Arrays.binarySearch(nums, 8); 		//검색대상배열 num  에서 8의 인덱스 찍기
+		int index = Arrays.binarySearch(nums,8); 		//검색대상배열 정렬된 num 에서 8의 인덱스번호 찍기
 		System.out.println("8의 인덱스: " + index);
 		
 		System.out.println();
