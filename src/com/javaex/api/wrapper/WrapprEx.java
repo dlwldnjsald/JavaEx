@@ -23,7 +23,36 @@ public class WrapprEx {
 		//주의 : 전달되는 파라미터의 문자열 형태가 해당하는 데이터타입 기본형의 형태와 동일해야 한다
 		//Integer i2 = Integer.valueOf("a024");//이경우 변환이 안됨 a때문
 		
+		
+		//auto boxing
+		Integer i3 = 10;						// Integer i3 = Integer.valueOf(10);
+		//auto unboxing
+		int result = i3 + 2;					// int result = i3.intValue() +2와 동일한 코드
+		
+		
+		//parse 계열 메서드 : 문자열 이용, 특정 타입으로 변환, 다른 형태로 출력 
+		System.out.println(Integer.parseInt("-123")); 	//문자열->정수형으로 출력
+		System.out.println(Integer.parseInt("10", 16));	//16진수 10->정수로 출력 
+		System.out.println(Integer.toBinaryString(28));	//28-> 2진수 문자열로 출력
+		System.out.println();
+		
+		
+		//형변환
+		System.out.println(i2.doubleValue());			//double형으로 형변환 
+		System.out.println();
+		
+		
+		//포장된 값의 비교
+		Integer i4 = Integer.valueOf(2024); 			//
+		Integer i5 = Integer.valueOf(2024);
+		System.out.println(i4 == i5);
+		
+		//언박싱 비교 (내부 데이터의 비교방법)
+		System.out.println(i4.intValue() == i5.intValue());
+		System.out.println(i4.equals(i5));
 	
+		
+		
 	}
 
 }
