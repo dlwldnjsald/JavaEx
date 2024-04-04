@@ -26,7 +26,7 @@ public class ArrayCopyEx {
 		
 		
 		// Arrays.copyOf를 이용한 copy
-		target = Arrays.copyOf(src, src.length);		// (복사할 원본배열,복하살길이)
+		target = Arrays.copyOf(src, src.length);		// (복사할 원본배열,복사할 길이)
 		System.out.println(Arrays.toString(target));
 		
 		System.out.println();
