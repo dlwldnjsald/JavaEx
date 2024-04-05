@@ -49,6 +49,17 @@ public class SerachEx {
 		
 		int me2 =  Arrays.binarySearch(me, 3.141);
 		System.out.println("me2 배열의 3.141의 인덱스:" + me2);
+		System.out.println();
+
+		//--------혼자 프랙티스-----안보고 해보기------
+		int[] number = { 1,4,9,24,36,47,67,46 };
+		
+		Arrays.sort(number);
+		System.out.println("number의 정렬된 배열:" + Arrays.toString(number));
+		
+		int index2 = Arrays.binarySearch(number, 67);
+		System.out.println("number 배열의 67값의 인덱스: " + index2);
+		
 		
 		
 		System.out.println("=======================================");
