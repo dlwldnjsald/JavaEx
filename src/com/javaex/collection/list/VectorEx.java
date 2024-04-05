@@ -1,5 +1,6 @@
 package com.javaex.collection.list;
 
+import java.util.Enumeration;
 import java.util.Vector;	//벡터 임포트
 
 public class VectorEx {
@@ -59,7 +60,19 @@ public class VectorEx {
 			Integer item = (Integer)v.elementAt(i);
 			System.out.println(item + " ");
 		}
+		System.out.println("===============enumeration");
+		
+		
 		//컬렉션 프레임워크에서는 루프의 개선이 필요하다 
+		Enumeration e = v.elements();
+		while(e.hasMoreElements()) {
+			//뒤쪽에 요소가 더 있는가?
+			Integer item = (Integer)e.nextElement();
+			System.out.println(item + " ");
+		}
+		System.out.println();
+		
+		
 		//TODO: 루프 방식 개선
 		System.out.println("-------------------------");
 		System.out.println("Size:" + v.size() + ", Capacity:" + v.capacity()); 	//하지만 capacity 부분은 20으로 줄어들지 않고 남아있ㄷ
@@ -86,7 +99,10 @@ public class VectorEx {
 //		v2.addElement("Vector");							//String 은 Number 를 상속받지 않은 객체므로 담길수 없다	
 		
 		
-		//TODO: 개선된 방식으로 루프 돌리기
+		Enumeration<? super Number> e2 = v2.elements();
+		while(e2.hasMoreElements()) {	//뒤에 요소가 더 있나?
+			System.out.println(e2.nextElement());
+		}
 		
 		
 		
