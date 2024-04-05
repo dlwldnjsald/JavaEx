@@ -2,6 +2,7 @@ package com.javaex.collection.hash;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Objects;
 
 //====================================클래스 Student 만들기===========================
 class Student {
@@ -34,12 +35,35 @@ class Student {
 	}
 
 	
+	//객체의 동등성 비교를 위한 두개의 관문-----------------------///
+	//1. hashCode()
+	//2. equals()
+	
+	@Override
+	public int hashCode() {
+		//해시 함수의 로직: 학번을 기준으로 돌려주기로 함
+		return id;
+	}
+	
+	
+	//값의 동일성 판별을 위한 equals 메서드 오버라이드
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Student) { //student 가 obj 라면?
+			Student other = (Student)obj;
+			return id == other.id && 
+					name.equals(other.name);
+		}
+		return super.equals(obj);
+	}
+	//---------------------------------------------------///
+	
 	//toString overrides //객체를 문자열로 변환할때의 출력형 메소드
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + "]";
 	}
-	
+
 }
 
 //================================================================================
@@ -163,13 +187,17 @@ public class HashSetEx {
 		Student s1 = new Student(10, "홍길동");
 		Student s2 = new Student(20, "홍길동");
 		Student s3 = new Student(30, "고길동");	//s3과 s4를 비교해보자.
-		Student s4 = new Student(30, "고길동"); 	//데이터는 같은데 왜 다른 객체로 인식?
+		Student s4 = new Student(30, "고길동"); 	//내부데이터는 같은데 왜 다른 객체로 인식?
+		
+		//s3과 s4 두 객체를 동등 객체로 판정하는 로직을 만들기
+		//위의 student 클래스 가서 hashcode(), equals()메서드 오버라이딩 해줘서 출력해보기
+		
 		
 		hs.add(s1); hs.add(s2)	;hs.add(s3)	;hs.add(s4);
 		
 		System.out.println("학생부:" + hs);
 		System.out.println(s3.equals(s4));	//new통	통한 다른 객체를 만들어주었기때문 /false
-		
+											//동등객체로 인식해주는 로직을 만든 후에는 true로 찍힘
 	
 	
 	}
