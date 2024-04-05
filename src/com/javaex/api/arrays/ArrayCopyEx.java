@@ -13,6 +13,13 @@ public class ArrayCopyEx {
 		
 		System.out.println();
 		
+		//--------------------
+		char[] sonia = "Sonia loves Java Programming".toCharArray();
+		System.out.println(sonia);
+		System.out.println(Arrays.toString(sonia));
+		
+		//-----------------------
+		System.out.println("===================================================");
 		
 		
 		// system	을 이용한 copy
@@ -21,16 +28,17 @@ public class ArrayCopyEx {
 		System.out.println(target);
 		System.out.println(Arrays.toString(target));	//	배열의 내용을 출력
 		
-		System.out.println();
-		
+		//-----------------------
+		System.out.println("===================================================");
 		
 		
 		// Arrays.copyOf를 이용한 copy
 		target = Arrays.copyOf(src, src.length);		// (복사할 원본배열,복사할 길이)
 		System.out.println(Arrays.toString(target));
 		
-		System.out.println();
 		
+		//-----------------------
+		System.out.println("===================================================");
 		
 		
 		//Arrays.copyOfRange: 범위 복제 
