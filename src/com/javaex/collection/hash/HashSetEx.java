@@ -198,7 +198,7 @@ public class HashSetEx {
 		System.out.println("학생부:" + hs);
 		System.out.println(s3.equals(s4));	//new통	통한 다른 객체를 만들어주었기때문 /false
 											//동등객체로 인식해주는 로직을 만든 후에는 true로 찍힘
-	
+		
 	
 	}
 		
