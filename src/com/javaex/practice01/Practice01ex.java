@@ -7,14 +7,14 @@ public class Practice01ex {
 
 		System.out.println();
 		System.out.println("< Practice 01 >");
-		System.out.println("--------------------------------------------------------------");
+		System.out.println("==================================================================");
 
-		System.out.println("Ex01.java: 기본 자료형 중 정수형 자료형이 아닌 것은? \n" + "2)float");
+		System.out.println("\n" + "Ex01.java: 기본 자료형 중 정수형 자료형이 아닌 것은? \n" + "2)float");
 		System.out.println();
 		
 		System.out.println("Ex02.java: JDK와 JRE의 차이점을 설명한 것 중 틀린 것을 찾아 수정해보세요. \n"
-							+ "4) JDK에는 javac.exe가 포함되어있지 않다(x)");
-								System.out.println();
+							+ "4) JDK에는 javac.exe가 포함되어있지 않다(x)" + "\n");
+		
 		//JDK와 JRE의 차이점// 
 		//JDK에는 Java 프로그램을 작성하는 데 필요한 도구(그래서 Kit라고 부름)와
 		//이를 실행하는 데 필요한 JRE가 포함되어 있음
@@ -37,8 +37,8 @@ public class Practice01ex {
 									+ "(3) 자바 소스파일(~.java)을 작성한다 \n"
 									+ "(1) Javac.exe로 바이트코드(~.class)을 생성한다 \n" 
 									+ "(2) Java.exe로 JVM을 실행시킨다. \n"
-									+ "(4) JVM은 main() 메소드를 찾아 실행시킨다.");
-										System.out.println();
+									+ "(4) JVM은 main() 메소드를 찾아 실행시킨다." + "\n");
+									
 		// 소스코드를 작성
 		// (.java 확장자의 소스파일) 컴파일러 (javac.exe)가 바이트코드로 변함
 		// (.class 확장자의 클래스 파일) 런처 (java.exe)로 자바 가상 머신을 구동시킴
@@ -130,9 +130,87 @@ public class Practice01ex {
 		String e = "int person#/ String person#;로 가능함";
 		String f = "int_person/ 정수형불가 문자열로 선언String";
 		
-		System.out.println( a +"\n" + b +"\n"+ c +"\n"+ d +"\n"+ e +"\n"+ f);
+		System.out.println( a +"\n" + b +"\n"+ c +"\n"+ d +"\n"+ e +"\n"+ f + "\n");
 		
-		//-------------------------------------------------------------
+		
+		
+		
+		System.out.println("--------------------------Ex08.코드 수정후 오류 제거하기---------------------");
+		//문제의 코드
+		System.out.println("public class hello { //-> 이부분에서 클래스명은 파일명(.java)과 동일하게 설정해야" + "\n");
+		
+		
+		
+		
+		
+		System.out.println("-----------------------------------------------------------------------");
+		System.out.println("\n"+ "Ex09.java:" + "\n" +"short/2byte/정수형 " + "\n" + "double/8byte/실수형" + "\n" + 
+							"float/4byte/실수형" + "\n" + "byte/1byte/정수형"+ "\n" + "char/2byte/문자형" + "\n"
+							+ "Boolean/1byte/논리형" + "\n" + "long/8byte/정수형"+ "\n");
+							
+		//정수형: byte-short-int-long순으로 1-2-4-8byte
+		//실수형: float-double순으로 4-8byte
+		//문자형: char 2byte 문자 '하나' 저장/작은 따옴표('')로 주의-> 자바에서는 큰따옴표""가 String 이라는 객체를 만들기 때문에 주의
+		//논리형: boolean 1byte (t/f)
+
+
+		
+		
+		System.out.println("Ex10.java: 형 변환(type casting) 우선순위를 그린 표이다. 아래의 빈칸을 채우세요" + "\n"
+							+ "1)byte" +"\n" + "2)short" + "\n" + "3)2byte" +"\n" + "4)4byte"+ "\n" 
+							+ "5)long" +"\n" + "6)float" + "\n" + "7)double" + "\n" );
+		
+		
+		
+		
+		
+		System.out.println("--------------------------Ex11.코드 수정후 오류 제거하기---------------------");
+							
+		int iVar = 10;
+		long lVar = 1000000000000L; //Long도 위에 L
+		
+		String A = "char cVar = 'ab'; //char는 문자 '하나' 저장가능";	 
+//		char cVar = 'a';
+		
+		double dVar = 10;	
+		
+		String B = "float fVar = 12.4; //float형은 뒤에 F 써줘야함";
+//		float fVar = 12.4F;	
+		
+		String C = "String str = 'ab'; //큰따옴표가 String 이라는 객체를 만들어서 변경필요";
+//		String str = "ab";
+		
+		System.out.println(iVar + "\n" + lVar + "\n" + A + "\n" + dVar + "\n" + B + "\n" + C+ "\n");
+		System.out.println("-----------------------------------------------------------------------");
+
+		
+		
+		
+		System.out.println("\n"+ "Ex12.java: " +
+		"int x = 0;" + "\n" +
+		"int y = 0;" + "\n" +
+		"char grade = 'A';" +"\n" +
+		"int salary = 2_000_000;" + "\n" +
+		"int n = 1000; int로 바꿈" + "\n");
+		
+		
+		
+		
+		System.out.println("Ex13.java:" + "다음 중 결과값이 다른 것을 선택하고 이유를 설명해 보세요" + "\n" +
+							"A: (1)번 실수형 선언을 안해줘서 소숫점자리 다 잘리고 값이 2로 나움" + "\n");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
