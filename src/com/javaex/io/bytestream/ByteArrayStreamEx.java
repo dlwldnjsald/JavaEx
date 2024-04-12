@@ -56,7 +56,7 @@ public class ByteArrayStreamEx {
 		} catch (Exception e) { // 혹시 남아있을지 모를 예외처리
 			e.printStackTrace();
 		} finally {		
-//			if (bis != null) {
+//1방법			if (bis != null) {
 //				try {
 //					bis.close();
 //				} catch (Exception e) {
@@ -71,7 +71,7 @@ public class ByteArrayStreamEx {
 //				}
 //			} //원래 정상적으로 예외의 예외처리를 통해 안전하게 스트리밍을 완전히 열수있도록 
 			
-			try {
+//2방법			try {
 				bis.close();
 				bos.close();
 			} catch(Exception e) { 	//여기까지 작성해도 됨(완전히 정상적인 코드는 아니다)

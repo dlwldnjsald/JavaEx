@@ -123,23 +123,22 @@ public class Practice01ex {
 		
 		System.out.println("--------------------------Ex07.코드 수정후 오류 제거하기---------------------");
 		//문제의 코드
-		/*
-		int true;
-		int #_of_workers;
-		int countOfLettersInString;
-		int 1stLevel1;
-		int person#;
-		int _person;
-		 */
+	boolean true;
+	
+		String a = "int true/ 리턴타입은 boolean이 맞다";
+		String b = "int #_of_workers/ 리턴타입은 String이 맞다";
+		String c = "int countOfLettersInString/ 리턴타입은 String이 맞다";
+		String d = "int 1stLevel1/ 숫자와 알파벳의 조합이섞인 변수의 리턴타입 int선언은 불가하다.";
+		String e = "int person#/ String person#;로 가능함";
+		String f = "int_person/ 정수형불가 문자열로 선언String";
 		
-		boolean True = true;
-		String string = "#_of_workers";
-		String string1 ="countOfLettersInString";
-		String string2 = "1stLevel1";
-		String string3 = "person#";
-		String string4 = "_person";
-		//?
-		System.out.println(True +"\n" + string +"\n"+ string1 +"\n"+ string2 +"\n"+ string3 +"\n"+ string4);
+		 
+		
+		
+		System.out.println( a +"\n" + b +"\n"+ c +"\n"+ d +"\n"+ e +"\n"+ f);
+		
+		
+		
 		
 		
 		
