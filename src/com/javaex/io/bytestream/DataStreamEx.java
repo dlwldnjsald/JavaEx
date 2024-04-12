@@ -13,7 +13,7 @@ public class DataStreamEx {
 
 	private static String rootPath 
 		= System.getProperty("user.dir") + "\\files\\";
-//		= "C:\\Users\\806-26\\git\\JavaEx\\files\\";
+//		= "C:\\Users\\806-26\\git\\JavaEx\\files\\"; (경로 파일을 찾을수 없는경우 이렇게 시도해보기도 함..)
 	
 	private static String filename
 		=rootPath + "primitives.bin";
