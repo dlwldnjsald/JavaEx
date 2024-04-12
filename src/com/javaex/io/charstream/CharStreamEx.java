@@ -13,7 +13,7 @@ public class CharStreamEx {
 
 	public static void main(String[] args) {
 		// FileWriter
-//		writeFile();
+		writeFile();
 
 		// FileReader
 		readFile();

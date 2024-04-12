@@ -14,31 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>files</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>files/img.jpg</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Downloads/files/files/img.jpg</locationURI>
-		</link>
-		<link>
-			<name>files/last-leaf.txt</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Downloads/files/files/last-leaf.txt</locationURI>
-		</link>
-		<link>
-			<name>files/sangbuk.txt</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Downloads/files/files/sangbuk.txt</locationURI>
-		</link>
-		<link>
-			<name>files/thieves.txt</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Downloads/files/files/thieves.txt</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

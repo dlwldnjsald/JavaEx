@@ -122,9 +122,7 @@ public class Practice01ex {
 		
 		
 		System.out.println("--------------------------Ex07.코드 수정후 오류 제거하기---------------------");
-		//문제의 코드
-	boolean true;
-	
+		//문제의 코드	
 		String a = "int true/ 리턴타입은 boolean이 맞다";
 		String b = "int #_of_workers/ 리턴타입은 String이 맞다";
 		String c = "int countOfLettersInString/ 리턴타입은 String이 맞다";
@@ -132,10 +130,9 @@ public class Practice01ex {
 		String e = "int person#/ String person#;로 가능함";
 		String f = "int_person/ 정수형불가 문자열로 선언String";
 		
-		 
-		
-		
 		System.out.println( a +"\n" + b +"\n"+ c +"\n"+ d +"\n"+ e +"\n"+ f);
+		
+		//-------------------------------------------------------------
 		
 		
 		
