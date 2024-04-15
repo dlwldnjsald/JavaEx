@@ -89,7 +89,7 @@ public class HashSetEx {
 		
 		//요소(객체) 추가
 		hs.add("Java");
-		hs.add("C");
+		hs.add("C");,
 		hs.add("C++");
 		hs.add("Python");
 		hs.add("Java");
