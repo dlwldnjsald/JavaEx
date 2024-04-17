@@ -159,7 +159,7 @@ public class PhoneApp {
 		System.out.println(">메뉴번호: ");
 		
 		int a3 = scanner.nextInt();
-		a1.indexOf(a3-1);
+		
 		
 		
 		
