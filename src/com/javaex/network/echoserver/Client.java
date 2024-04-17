@@ -31,7 +31,7 @@ public class Client {
 			//	connect 시도
 			//	서버 주소와 포트 확보
 			InetSocketAddress remote =
-					new InetSocketAddress("192.168.0.49", 10000);
+					new InetSocketAddress("192.168.0.49", 10000);// window R cmd해서 명령프롬프트에 ipconfig 입력후 ipv4주소 입력, 포트번호
 			socket.connect(remote);
 			System.out.println("[서버에 연결되었습니다.]");
 			
