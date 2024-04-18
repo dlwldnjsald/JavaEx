@@ -1,6 +1,6 @@
 package com.javaex.practice01;
 
-public class Practice01ex {
+public class Practice01Ex {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
