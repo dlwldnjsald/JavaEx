@@ -93,7 +93,7 @@ public class LoopPractice02 {
 			pocket.add("money");
 					
 											
-				if (pock.contains("money")) {
+				if (pocket.contains("money")) {
 					System.out.println("Ride Taxi.");
 				} else {
 					System.out.println("Walk instead.");
@@ -119,15 +119,17 @@ public class LoopPractice02 {
 			
 			Scanner scanner = new Scanner(System.in);				//scanner import
 			System.out.println("what do you need in this case?");	//client 에게 입력 요청시 작성하는 출력문
-			String pock = scanner.next(); 							//pock 변수 스트링으로 설정후 입력위한 코드 설정
+			String pock = scanner.next(); 							//pock 변수 스트링으로 설정후 입력위한 코드 설정 
+																	//모르겠으면 ConsoleInpute,OutputEx.java 참고하기
 					
 				if (pock.contains("money")) {
-					System.out.println("Ride Taxi.");
+					System.out.println("You may ride taxi.");
 				} else {
 					System.out.println("Walk instead.");
 				}
 
-			scanner.close();										//scanner close
+			//scanner.close();	//scanner close 맨나중에 해줘도 됨
+			System.out.println("----------------");	
 		}
 		
 		
@@ -135,11 +137,50 @@ public class LoopPractice02 {
 		// 지갑에 돈이 있으면 택시를 타고, 지갑엔 돈이 없지만 카드가 있으면 택시를 타고, 돈도 없고 카드도 없으면 걸어가라.
 		public static void ElseIfPractice() {
 			
-			boolean posessCard = true;
+			boolean posessCard = true ; 
 			
-			ArrayList<String> pockey = new ArrayList<>();
-			pockey.add("paper");
-			pockey.add("phone");
+//			ArrayList<String> pockey1 = new ArrayList<>();
+//			pockey.add("paper");
+//			pockey.add("phone");
+			
+//			ArrayList<String> pockey1 = new ArrayList<>();
+//			pockey.add("paper");
+//			pockey.add("phone");
+//			-----------------------------------------------
+			ArrayList<String> pockey3 = new ArrayList<>();
+			pockey3.add("paper");
+			pockey3.add("phone");
+			pockey3.add("money");
+			
+			Scanner scanner = new Scanner(System.in);				//scanner import
+			System.out.println("what do you have in your pockey?");	//client 에게 입력 요청시 작성하는 출력문
+			String pockey2 = scanner.next();
+			
+			
+				//1) if 의 if 대신에 간단하게 else if 를 사용할 수 있다--------추천 추천
+				if(pockey3.contains("money")) {
+					System.out.println("Ride Taxi.");
+				} else if (posessCard) {
+					System.out.println("Ride Taxi because you have cards.");
+				} else {
+					System.out.println("Walk instead.");
+				}
+				
+				/*	
+				//2)if-else 의 if-else 사용해보기---------매우 복잡해서 추천하지 않음----------------
+					if (pockey1.contains("money")) {
+						System.out.println("Ride Taxi.");
+					} else {
+						
+						if (posessCard) {
+							System.out.println("Ride Taxi.");
+						} else {
+							System.out.println("Walk instead.");
+							
+						}
+							
+					}
+					*/
 		
 			
 			
