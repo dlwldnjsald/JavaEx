@@ -24,14 +24,19 @@ public class ListEx {
 		System.out.println("lst=" + lst);
 		System.out.println();
 
+		//get() method ->특정 인덱스의 값을 추출가능하다
+				System.out.println(lst.get(3));
+				System.out.println();
+				
+		//
 		
-		//객체 삽입
+		//객체 삽입 .add() method 사용하기
 		lst.add(2, "C#");
 		System.out.println("1st=" + lst);
 		System.out.println();
 
 		
-		//리스트는 중복 삽입을 허용
+		//리스트는 중복 삽입을 허용 //size()-> 요소의 개수를 리턴한다
 		lst.add("Java");
 		System.out.println("1st=" + lst);
 
@@ -40,7 +45,8 @@ public class ListEx {
 		System.out.println();
 		
 		
-		//삭제 : 인덱스 삭제
+		
+		//삭제 : 인덱스 삭제 .remove() method 사용하기
 		lst.remove(2);
 		//객체 삭제
 		lst.remove("Python");
