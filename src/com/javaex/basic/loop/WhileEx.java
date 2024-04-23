@@ -45,8 +45,32 @@ public class WhileEx {
 				
 			}
 			
+			//----------------------------------------------------------
+			int tree = 0;
+			while (tree < 10) {
+				tree++; //또는 tree += 1;
+				System.out.println("나무를 " + tree + "번 찍었습니다");			
+				}if (tree == 10) {
+					System.out.println("나무 넘어갑니다." + "\n");
+				}
+			//----------------------------------------------------------
+			int coffee = 10;
+			int money = 300;
 			
+			//패턴으로 이해하면 덜 어려움
+			while (money>0) {
+				System.out.println("돈을 받았습니다. 커피를 드립니다."); //1번 출력
+				coffee--;
+				System.out.println("남은 커피의 양은 " + coffee + "입니다."); //2번출력
+					
+					//while 문 안의 if loop 돌리기 //1-2번 패턴 동안에 3번 출력 하겠단 의미 
+					if (coffee==0) {
+						System.out.println("커피 재고가 다 떨어진 관계로 판매를 중지합니다.");
+						break; 				//break 안하면 while문이 무한대로 돌아감 음수로 떨어짐..
+					}
+			}
 			
 			
 	}
-}  
+}
+ 
