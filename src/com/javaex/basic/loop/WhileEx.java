@@ -26,6 +26,7 @@ public class WhileEx {
 
 
 package com.javaex.basic.loop;
+
 public class WhileEx {
 	// I Like Java0 ~ I Like Java 20
 	
