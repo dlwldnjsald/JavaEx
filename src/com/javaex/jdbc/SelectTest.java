@@ -46,8 +46,26 @@ public class SelectTest {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			System.err.println("SQLError!");
+		} finally {
+			try {
+				rs.close();
+			} catch (Exception e) {
+				
+			}
+			try {
+				stmt.close();
+			} catch(Exception e) {
+				
+			}
+			try {
+				conn.close();
+			} catch (Exception e) {
+				
+			}
+		
 		}
 		
 		
 	}
 }
+//
