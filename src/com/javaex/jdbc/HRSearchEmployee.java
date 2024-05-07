@@ -33,7 +33,7 @@ public class HRSearchEmployee {
             String pattern = scanner.nextLine(); // Reading user input
             
 				
-            String sql = "SELECT first_name ," +
+            String sql = "SELECT first_name, " +
             			 "last_name, " +
             			 "email, " +
             			 "phone_number, " +

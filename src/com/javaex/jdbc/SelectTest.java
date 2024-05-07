@@ -36,7 +36,7 @@ public class SelectTest {
 				//rs = null;
 			
 			
-				String sql = "SELECT department_id, department_name FROM departments";
+				String sql = "SELECT department_id, department_name FROM departments";  //(1)
 				//SQL 쿼리 실행: stmt.executeQuery(sql)를 사용하여 SQL 쿼리를 실행하고 
 				//결과를 담은 ResultSet 객체를 얻는다
 				rs = stmt.executeQuery(sql); //DB Cursor 반환
