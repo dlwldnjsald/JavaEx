@@ -20,7 +20,7 @@ public class HREmpList {
 		//접속객체, 문맥객체(sql), 레코드(커서)객체 
 		Connection c = null;  // 식별자쓸땐 주로 소문자로 해주기
 		Statement s = null;
-		ResultSet r = null;
+		ResultSet rs = null;
 		
 		
 		//try-catch
@@ -50,13 +50,13 @@ public class HREmpList {
 				
 				System.out.println("Query: " + sql);
 			
-				r = s.executeQuery(sql);
+				rs = s.executeQuery(sql);
 			 
 			
-					while (r.next()) {
+					while (rs.next()) {
 						//getXXX(컬럼 순서) or getXXX(컬럼 프로젝션 이름)
-						String ename = r.getString("empl"); //별칭 대신 String ename = r.getString(l); 해도됨
-						String mname = r.getString(2); // 2번줄의 인덱스를 그대로 찍어도 됨
+						String ename = rs.getString("empl"); //별칭 대신 String ename = r.getString(l); 해도됨
+						String mname = rs.getString(2); // 2번줄의 인덱스를 그대로 찍어도 됨
 					
 						//원하는 출력문 작성
 						System.out.println("name: " + ename + ", manager: " + mname );
@@ -74,7 +74,7 @@ public class HREmpList {
 		} finally { 
 			
 			try {
-				r.close();
+				rs.close();
 			} catch (Exception e) {
 				
 			}//1
