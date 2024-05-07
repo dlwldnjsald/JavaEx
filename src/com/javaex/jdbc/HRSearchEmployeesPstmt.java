@@ -23,39 +23,41 @@ public class HRSearchEmployeesPstmt {
 		String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
 		String dbuser = "hr";
 		String dbpass = "hr";
+		
 
 		// connection, preparedStatement, resultSet 변수 선언, 초기화
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
+
 		// scanner open
 		Scanner scanner = new Scanner(System.in);
-
+		
 		// try- catch
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DriverManager.getConnection(dburl, dbuser, dbpass);
 
 			// scanner 입력받기
-			System.out.print("Enter:");
-			String pattern = scanner.nextLine();
+			System.out.print("Enter: ");
+			String pattern = scanner.next();
 
 			// 실행 계획 수립 sql 작성 ---------------------------------
 			String sql = "SELECT first_name || ' ' || last_name, email, phone_number, hire_date " 
     				+ "FROM employees WHERE lower(first_name) like ? " 
     				+ "OR lower(last_name) like ?";
-       
       
 			// -->실행계획을 기반으로 PSTMT 세워주기
 			pstmt = con.prepareStatement(sql);
-
+			
 			// -->동적 파라미터 바인딩하기
 			pstmt.setString(1, "%" + pattern + "%");
 			pstmt.setString(2, "%" + pattern + "%");
-
+			
 			// 쿼리를 수행해주세요
 			rset = pstmt.executeQuery();
+					
 			// -----------------------------------------------------
 
 			// while문 loop 돌기
@@ -81,6 +83,7 @@ public class HRSearchEmployeesPstmt {
 	
 
 		} finally {
+			
 			try {
 				if(rset != null) rset.close();
 				if(pstmt != null) pstmt.close();
