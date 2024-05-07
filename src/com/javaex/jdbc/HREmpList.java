@@ -18,9 +18,9 @@ public class HREmpList {
 		
 		//변수 선언 및 초기화 
 		//접속객체, 문맥객체(sql), 레코드(커서)객체 
-		Connection c = null;  // 식별자쓸땐 주로 소문자로 해주기
-		Statement s = null;
-		ResultSet rs = null;
+		Connection con = null;  // 식별자쓸땐 주로 소문자로 해주기
+		Statement stmt = null;
+		ResultSet rset = null;
 		
 		
 		//try-catch
@@ -28,10 +28,10 @@ public class HREmpList {
 			//JDBC 드라이버 로드: Oracle JDBC 드라이버 클래스를 로드
 			Class.forName("oracle.jdbc.driver.OracleDriver"); 
 			//Connection 연결: DriverManager.getConnection(dburl, dbuser, dbpass)를 사용하여 데이터베이스에 연결
-			c = DriverManager.getConnection(dburl,dbuser,dbpass);
+			con = DriverManager.getConnection(dburl,dbuser,dbpass);
 			//Statement 생성: conn.createStatement()를 호출하여 
 			//SQL 쿼리를 실행할 수 있는 Statement 객체를 생성
-			s = c.createStatement();
+			stmt = con.createStatement();
 			//rs = null;
 			
 				//sql 쿼리 작성
@@ -50,13 +50,13 @@ public class HREmpList {
 				
 				System.out.println("Query: " + sql);
 			
-				rs = s.executeQuery(sql);
+				rset = stmt.executeQuery(sql);
 			 
 			
-					while (rs.next()) {
+					while (rset.next()) {
 						//getXXX(컬럼 순서) or getXXX(컬럼 프로젝션 이름)
-						String ename = rs.getString("empl"); //별칭 대신 String ename = r.getString(l); 해도됨
-						String mname = rs.getString(2); // 2번줄의 인덱스를 그대로 찍어도 됨
+						String ename = rset.getString("empl"); //별칭 대신 String ename = r.getString(l); 해도됨
+						String mname = rset.getString(2); // 2번줄의 인덱스를 그대로 찍어도 됨
 					
 						//원하는 출력문 작성
 						System.out.println("name: " + ename + ", manager: " + mname );
@@ -74,19 +74,19 @@ public class HREmpList {
 		} finally { 
 			
 			try {
-				rs.close();
+				rset.close();
 			} catch (Exception e) {
 				
 			}//1
 			
 			try {
-				c.close();
+				con.close();
 			} catch (Exception e) {
 				
 			}//2
 			
 			try {
-				s.close();
+				stmt.close();
 			} catch (Exception e) {
 				
 			}//3
