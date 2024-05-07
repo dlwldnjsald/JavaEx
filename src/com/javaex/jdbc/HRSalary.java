@@ -58,7 +58,7 @@ public class HRSalary {
 				
 				
 		} catch (ClassNotFoundException e) {
-			System.err.println("드라이버를 로드하지 못했습니다.");
+			System.err.println("JDBC 드라이버를 로드하지 못했습니다.");
 			e.printStackTrace();
 		} catch (SQLException e) {
 			System.err.println("SQLError!");
@@ -85,3 +85,9 @@ public class HRSalary {
 	}
 
 }
+
+
+
+/*
+
+*/
