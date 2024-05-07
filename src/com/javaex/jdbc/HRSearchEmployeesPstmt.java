@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class HRSearchEmployeesPstmt {
 	
 	public static void main(String[] args) {
-		// preparedStatement 사용해서 만들어보기
+		// preparedStatement 사용해서 만들어보기//
 		/*
 		 * [실습 2] 사원 검색 프로그램 : 클래스 Scanner 를 사용하여 사원 이름을 입력 받아 사원 정보를 검색하는 프로그램 을 작성해 봅시다
 		 * 부분 이름 검색이 가능해야 합니다 / 성, 이름 컬럼에 대해 OR 검색이 되어야 합니다 /
@@ -41,7 +41,7 @@ public class HRSearchEmployeesPstmt {
 
 			// scanner 입력받기
 			System.out.print("Enter: ");
-			String pattern = scanner.next();
+			String pattern = scanner.nextLine();
 
 			// 실행 계획 수립 sql 작성 ---------------------------------
 			String sql = "SELECT first_name || ' ' || last_name, email, phone_number, hire_date " 
