@@ -40,6 +40,14 @@ public class HREmpList {
 						 "FROM employees emp JOIN employees mgr "+
 						 "ON emp.employee_id = mgr.employee_id "+
 						 "ORDER BY empl DESC";	
+				/*
+				 *String sql = "SELECT emp.first_name || ' ' || emp.last_name empl," 
+						sql += "mgr.first_name || ' ' || mgr.last_name "  
+						sql += "FROM employees emp JOIN employees mgr "
+						sql += "ON emp.employee_id = mgr.employee_id "
+						sql += "ORDER BY empl DESC";	
+				 */ //이렇게 쿼리 작성해줘도 무방하다 
+				
 				System.out.println("Query: " + sql);
 			
 				r = s.executeQuery(sql);
