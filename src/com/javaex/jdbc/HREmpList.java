@@ -32,7 +32,7 @@ public class HREmpList {
 			//Statement 생성: conn.createStatement()를 호출하여 
 			//SQL 쿼리를 실행할 수 있는 Statement 객체를 생성
 			stmt = con.createStatement();
-			//rs = null;
+			//rset = null;
 			
 				//sql 쿼리 작성
 				String sql = "SELECT emp.first_name || ' ' || emp.last_name empl,"+ //name으로 별칭을 지어줌
