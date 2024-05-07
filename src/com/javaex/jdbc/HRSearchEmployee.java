@@ -45,9 +45,9 @@ public class HRSearchEmployee {
             System.out.println("\n" + "SQL:" + sql + "\n");
             
 			/*
-			 String sql = "SELECT first_name || ' ' || last_name, email, phone_number, hire_date " +
-            				+ "FROM employees WHERE lower(first_name) like '%" + pattern.toLowerCase() + "%' 
-            				+ "OR lower(last_name) like '%" + pattern.toLowerCase() + "%'";
+			String sql = "SELECT first_name || ' ' || last_name, email, phone_number, hire_date " 
+    				+ "FROM employees WHERE lower(first_name) like '%" + pattern.toLowerCase() + "%' "
+    				+ "OR lower(last_name) like '%" + pattern.toLowerCase() + "%'";
             			
 			 */
 			
