@@ -17,6 +17,7 @@ public class SelectTest {
 		
 		
 		//Connection, Statement, ResultSet 변수선언 및 초기화한 영역
+		//접속객체, 문맥객체(sql), 레코드(커서)객체 
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
