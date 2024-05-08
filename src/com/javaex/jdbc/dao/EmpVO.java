@@ -13,17 +13,17 @@ import java.sql.Date;
 public class EmpVO {
 	
 	//필드
-	private Long employeeId;
+	private Long employeeid;
 	private String fname;
 	private String lname;
 	private String email;
 	private String pnum;
 	private Date hdate;
-	private String jobId;
+	private String jobid;
 	private long salary;
-	private int cPct;
-	private Long managerId;
-	private int departmentId;
+	private int cpct;
+	private Long managerid;
+	private int departmentid;
 	
 	//기본 생성자-------------
 	public EmpVO() {
@@ -31,28 +31,28 @@ public class EmpVO {
 	}
 	
 	// 전체필드 생성자----------
-	public EmpVO(Long employeeId, String fname, String lname, String email, String pnum, Date hdate, String jobId,
-			long salary, int cPct, Long managerId, int departmentId) {
+	public EmpVO(Long employeeid, String fname, String lname, String email, String pnum, Date hdate, String jobid,
+			long salary, int cpct, Long managerid, int departmentid) {
 		super();
-		this.employeeId = employeeId;
+		this.employeeid = employeeid;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.pnum = pnum;
 		this.hdate = hdate;
-		this.jobId = jobId;
+		this.jobid = jobid;
 		this.salary = salary;
-		this.cPct = cPct;
-		this.managerId = managerId;
-		this.departmentId = departmentId;
+		this.cpct = cpct;
+		this.managerid = managerid;
+		this.departmentid = departmentid;
 	}
 	
 	// 부분 필드 생성자---------
-	public EmpVO(Long employeeId, String fname, 
+	public EmpVO(Long employeeid, String fname, 
 			String lname, String email, 
 			String pnum, Date hdate) {
 	super();
-	this.employeeId = employeeId;
+	this.employeeid = employeeid;
 	this.fname = fname;
 	this.lname = lname;
 	this.email = email;
@@ -65,11 +65,11 @@ public class EmpVO {
 	//getters, setters -----
 
 	public Long getEmployeeId() {
-		return employeeId;
+		return employeeid;
 	}
 
-	public void setEmployeeId(Long employeeId) {
-		this.employeeId = employeeId;
+	public void setEmployeeId(Long employeeid) {
+		this.employeeid = employeeid;
 	}
 
 	public String getFname() {
@@ -113,11 +113,11 @@ public class EmpVO {
 	}
 
 	public String getJobId() {
-		return jobId;
+		return jobid;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
+	public void setJobId(String jobid) {
+		this.jobid = jobid;
 	}
 
 	public long getSalary() {
@@ -129,36 +129,36 @@ public class EmpVO {
 	}
 
 	public int getcPct() {
-		return cPct;
+		return cpct;
 	}
 
-	public void setcPct(int cPct) {
-		this.cPct = cPct;
+	public void setcPct(int cpct) {
+		this.cpct = cpct;
 	}
 
 	public Long getManagerId() {
-		return managerId;
+		return managerid;
 	}
 
-	public void setManagerId(Long managerId) {
-		this.managerId = managerId;
+	public void setManagerId(Long managerid) {
+		this.managerid = managerid;
 	}
 
 	public int getDepartmentId() {
-		return departmentId;
+		return departmentid;
 	}
 
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
+	public void setDepartmentId(int departmentid) {
+		this.departmentid = departmentid;
 	}
 
 	
 	// ToString
 	@Override
 	public String toString() {
-		return "EmpVO [employeeId=" + employeeId + ", fname=" + fname + ", lname=" + lname + ", email=" + email
-				+ ", pnum=" + pnum + ", hdate=" + hdate + ", jobId=" + jobId + ", salary=" + salary + ", cPct=" + cPct
-				+ ", managerId=" + managerId + ", departmentId=" + departmentId + "]";
+		return "EmpVO [employeeId=" + employeeid + ", fname=" + fname + ", lname=" + lname + ", email=" + email
+				+ ", pnum=" + pnum + ", hdate=" + hdate + ", jobId=" + jobid + ", salary=" + salary + ", cPct=" + cpct
+				+ ", managerId=" + managerid + ", departmentId=" + departmentid + "]";
 	}
 	
 	
