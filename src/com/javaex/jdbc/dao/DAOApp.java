@@ -10,7 +10,8 @@ public class DAOApp {
 		listAuthors();
 		System.out.println();
 		
-		insertAuthor(); // 키보드로 이름과 정보입력해서 dao-insert 수행후
+//		insertAuthor(); // 키보드로 이름과 정보입력해서 dao-insert 수행후
+		updateAuthor();
 		System.out.println();
 		
 		listAuthors(); // 여기서 확인예정
@@ -20,20 +21,24 @@ public class DAOApp {
 
 	
 	private static void listAuthors() {
+		//인스턴스 생성
 		AuthorDAO dao = new AuthorDAOImplOracle();
+		//타이틀 목록 출력
 		System.out.println("================Authors===================");
-
+		
+		//get data from db and list변수에 저장
 		List<AuthorVO> list = dao.getList();
-		if (list.size() > 0) {
-			// iterator 불러오기
-			Iterator<AuthorVO> it = list.iterator();
-			// iterator 순회
-			while (it.hasNext()) {
-				AuthorVO vo = it.next();
-				System.out.printf("%d\t%s\t%s%n", vo.getAuthorId(), vo.getAuthorName(), vo.getAuthorDesc());
-			}
+			//if 조건문 돌기 -작가 목록이 비어있지 않은지여부 확인
+			if (list.size() > 0) {
+				// iterator 불러오기
+				Iterator<AuthorVO> it = list.iterator();
+				// iterator 순회
+				while (it.hasNext()) {
+					AuthorVO vo = it.next();
+					System.out.printf("%d\t%s\t%s%n", vo.getAuthorId(), vo.getAuthorName(), vo.getAuthorDesc());
+				}
 
-		} else {
+			} else {
 			System.out.println("데이터가 없습니다.");
 
 		}
@@ -46,26 +51,52 @@ public class DAOApp {
 		// scanner 호출
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("이름:");
+		System.out.print("이름:");
 		String name = scanner.nextLine();
 
-		System.out.println("정보:");
+		System.out.print("정보:");
 		String desc = scanner.nextLine();
 
 		
-		// AuthorVO 클래스의 정보 불러오기
+		// AuthorVO 클래스의 정보 불러오기 vo 객체 생성
 		AuthorVO vo = new AuthorVO(name, desc);
 		// AuthorDAO는 인터 페이스라 실제 객체 AuthorDAOImplOracle 호출
 		AuthorDAO dao = new AuthorDAOImplOracle();
-		boolean success = dao.insert(vo);
-
+		//insert() 메서드를 사용하여 새로운 작가 정보를 데이터베이스에 삽입
+		boolean success = dao.insert(vo); 
+		//boolean 타입으로 출력 
 		System.out.println("Author INSERT " + (success ? "성공" : "실패")); // 3항연산
 
 		
 		scanner.close();
+		
 
 	}
 	//-----------------------------------------------
 
-
+	private static void updateAuthor() {
+		
+		//scanner 호출
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("변경할 레코드 ID:");
+		Long authorId = Long.parseLong(scanner.nextLine());
+		
+		System.out.print("이름:");
+		String name = scanner.nextLine();
+		
+		System.out.print("정보:");
+		String desc = scanner.nextLine();
+		
+		
+		AuthorVO vo = new AuthorVO(authorId, name, desc);
+		AuthorDAO dao = new AuthorDAOImplOracle();
+		boolean success = dao.update(vo);
+		
+		
+		System.out.println("Author UPDATE: " + (success ? "성공" : "실패"));
+		scanner.close();
+	
+		
+	}
 }
