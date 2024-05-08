@@ -11,7 +11,9 @@ public class DAOApp {
 		System.out.println();
 		
 //		insertAuthor(); // 키보드로 이름과 정보입력해서 dao-insert 수행후
-		updateAuthor();
+//		updateAuthor();
+//		getAuthor();
+		deleteAuthor();
 		System.out.println();
 		
 		listAuthors(); // 여기서 확인예정
@@ -97,6 +99,41 @@ public class DAOApp {
 		System.out.println("Author UPDATE: " + (success ? "성공" : "실패"));
 		scanner.close();
 	
+	}
+	//--------------------------------------------------
+	
+	private static void getAuthor() {
+		
+		//Scanner 호출
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("레코드 ID:");
+		Long authorId = Long.parseLong(scanner.nextLine());
+		
+		AuthorDAO dao = new AuthorDAOImplOracle();
+		AuthorVO vo = dao.get(authorId);
+		
+		if (vo != null) {
+			System.out.printf("%d\t%s\t%s\n", vo.getAuthorId(), vo.getAuthorName(), vo.getAuthorDesc());
+		} else {
+			System.out.println("레코드를 찾지 못했습니다.");
+		}
+		
+		scanner.close();
+	}
+	//-----------------------------------------------------
+	
+	private static void deleteAuthor() {
+		
+		//scanner open
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("삭제할 레코드 ID:");
+		Long authorId = Long.parseLong(scanner.nextLine());
+		
+		AuthorDAO dao = new AuthorDAOImplOracle();
+		boolean success = dao.delete(authorId);
+		
+		System.out.println("Author DELETE " + (success ? "성공" : "실패"));
 		
 	}
+	
 }
