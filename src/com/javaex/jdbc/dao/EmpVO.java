@@ -19,6 +19,11 @@ public class EmpVO {
 	private String email;
 	private String pnum;
 	private Date hdate;
+	private String jobId;
+	private long salary;
+	private int cPct;
+	private Long managerId;
+	private int departmentId;
 	
 	//기본 생성자-------------
 	public EmpVO() {
@@ -26,9 +31,8 @@ public class EmpVO {
 	}
 	
 	// 전체필드 생성자----------
-	public EmpVO(Long employeeId, String fname, 
-				String lname, String email, 
-				String pnum, Date hdate) {
+	public EmpVO(Long employeeId, String fname, String lname, String email, String pnum, Date hdate, String jobId,
+			long salary, int cPct, Long managerId, int departmentId) {
 		super();
 		this.employeeId = employeeId;
 		this.fname = fname;
@@ -36,9 +40,30 @@ public class EmpVO {
 		this.email = email;
 		this.pnum = pnum;
 		this.hdate = hdate;
+		this.jobId = jobId;
+		this.salary = salary;
+		this.cPct = cPct;
+		this.managerId = managerId;
+		this.departmentId = departmentId;
 	}
+	
+	// 부분 필드 생성자---------
+	public EmpVO(Long employeeId, String fname, 
+			String lname, String email, 
+			String pnum, Date hdate) {
+	super();
+	this.employeeId = employeeId;
+	this.fname = fname;
+	this.lname = lname;
+	this.email = email;
+	this.pnum = pnum;
+	this.hdate = hdate;
+}
 
-	//getters, setters ------
+	
+
+	//getters, setters -----
+
 	public Long getEmployeeId() {
 		return employeeId;
 	}
@@ -87,13 +112,54 @@ public class EmpVO {
 		this.hdate = hdate;
 	}
 
+	public String getJobId() {
+		return jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
+	public long getSalary() {
+		return salary;
+	}
+
+	public void setSalary(long salary) {
+		this.salary = salary;
+	}
+
+	public int getcPct() {
+		return cPct;
+	}
+
+	public void setcPct(int cPct) {
+		this.cPct = cPct;
+	}
+
+	public Long getManagerId() {
+		return managerId;
+	}
+
+	public void setManagerId(Long managerId) {
+		this.managerId = managerId;
+	}
+
+	public int getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	
 	// ToString
 	@Override
 	public String toString() {
 		return "EmpVO [employeeId=" + employeeId + ", fname=" + fname + ", lname=" + lname + ", email=" + email
-				+ ", pnum=" + pnum + ", hdate=" + hdate + "]";
+				+ ", pnum=" + pnum + ", hdate=" + hdate + ", jobId=" + jobId + ", salary=" + salary + ", cPct=" + cPct
+				+ ", managerId=" + managerId + ", departmentId=" + departmentId + "]";
 	}
-	
 	
 	
 	
