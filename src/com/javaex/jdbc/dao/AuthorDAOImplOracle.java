@@ -2,6 +2,7 @@ package com.javaex.jdbc.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -75,4 +76,55 @@ public class AuthorDAOImplOracle implements AuthorDAO {
 		return list;
 	}
 
+	@Override
+	public AuthorVO get(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insert(AuthorVO authorVo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int insertedCount = 0;	//Insert 결과 영향받은 레코드 수
+		
+		try {
+			//커낵션 생성
+			conn = getConnection();
+			//실행계획 준비
+			String sql = "INSERT INTO author (author_id ,author_name, author_desc) " +
+						 "VALUES (seq_author_id.NEXTVAL,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, authorVo.getAuthorName());
+			pstmt.setString(2, authorVo.getAuthorDesc());
+			
+			//쿼리 수행
+			insertedCount = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+				
+			} catch (Exception e) { }
+		}
+		return insertedCount == 1;   
+	}
+
+	@Override
+	public boolean delete(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(AuthorVO authorVo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 }
