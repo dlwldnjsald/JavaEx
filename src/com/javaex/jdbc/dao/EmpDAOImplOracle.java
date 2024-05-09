@@ -39,13 +39,13 @@ public class EmpDAOImplOracle implements EmpDAO {
 			conn = getConnection();
 			stmt = conn.createStatement();
 			
-			String sql = "SELECT emp.employee_id, "
-					+ "emp.first_name, "
-					+ "emp.last_name empl, "
-					+ "emp.email, "
-					+ "emp.phone_number, "
-					+ "emp.hire_date "
-					+ "FROM employees ORDER BY empl DESC";
+			String sql = "SELECT employee_id, "
+					+ "first_name, "
+					+ "last_name, "
+					+ "email, "
+					+ "phone_number, "
+					+ "hire_date "
+					+ "FROM employees ORDER BY employee_id DESC";
 			
 			rs = stmt.executeQuery(sql);
 			

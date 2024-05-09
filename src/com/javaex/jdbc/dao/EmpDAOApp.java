@@ -25,7 +25,7 @@ public class EmpDAOApp {
 				Iterator<EmpVO> it = list.iterator();
 					while (it.hasNext()) {
 						EmpVO vo = it.next();
-						System.out.printf("%d\t%s\t%s\t%s\t%s\t%d%n", 
+						System.out.printf("%d\t%s\t%s\t%s\t%s\t%s%n", 
 								vo.getEmployeeId(), vo.getFname(), vo.getLname(),
 								vo.getEmail(), vo.getPnum(), vo.getHdate());
 					}
