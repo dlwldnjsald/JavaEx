@@ -8,7 +8,6 @@ public interface EmpDAO {
 	//List - SELECT 쿼리
 	
 	public List<EmpVO> getList();
-	
 	public EmpVO get(Long id);
 	public boolean insert(EmpVO empvo);
 	public boolean delete(Long id);

@@ -7,8 +7,7 @@ import java.sql.SQLException;
 public class ConnectionTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+		
 				String dburl = "jdbc:oracle:thin:@localhost:1521:xe"; //접속url/오라클 db에 있는 프로젝트생성시 만들었던  
 				String dbuser = "hr";
 				String dbpass = "hr";
