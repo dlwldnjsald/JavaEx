@@ -11,7 +11,8 @@ public interface PhoneBookDAO {
 	public List<PhoneBookVO> getList(); 
 	public boolean insert(PhoneBookVO phonebookvo);
 	public boolean delete(PhoneBookVO phonebookvo);
-	public boolean search(PhoneBookVO phonebookvo);
+	public PhoneBookVO search(int id);
+	
 	
 	
 	

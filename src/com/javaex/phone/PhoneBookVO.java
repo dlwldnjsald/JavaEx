@@ -35,6 +35,14 @@ public class PhoneBookVO {
 				
 			}
 
+			// 부분 필드 생성자 ----------------------------
+			public PhoneBookVO(String name, String hp, String tel) {
+				super();
+				this.name = name;
+				this.hp = hp;
+				this.tel = tel;
+			}
+			
 			
 			
 			public int getId() {
