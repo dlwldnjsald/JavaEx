@@ -1,6 +1,5 @@
 package com.javaex.phone;
 
-import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -46,7 +45,7 @@ public class PhoneBookDAOApp {
 				// 종료 메세지 출력
 				System.out.println("\n***************************************");
 				System.out.println("*           감사합니다.                 *");
-				System.out.println("*****************************************");
+				System.out.print("*****************************************");
 				
 				// 반복 종료를 위해 true-> false 입력
 				running = false; 
@@ -80,7 +79,8 @@ public class PhoneBookDAOApp {
 			// iterator 순회
 			while (it.hasNext()) {
 				PhoneBookVO vo = it.next();
-				System.out.printf("%d\t%s\t%s\t%s%n", vo.getId(), vo.getName(), vo.getHp(), vo.getTel());
+				System.out.printf("%d\t%s\t%s\t%s%n", 
+						vo.getId(), vo.getName(), vo.getHp(), vo.getTel());
 			}
 
 		} else {
@@ -93,27 +93,28 @@ public class PhoneBookDAOApp {
 
 	private static void insert(Scanner scanner) {
 		
-		System.out.println();
-		System.out.println("<2.등록>");
+		   System.out.println();
+		    System.out.println("<2.등록>");
 
-		System.out.println(">이름: ");
-		String name = scanner.next();
+		    System.out.println(">이름: ");
+		    // next() 대신 nextLine()으로 변경하여 한 줄씩 입력을 받음
+		    String name = scanner.nextLine();
 
-		System.out.println(">휴대전화: ");
-		String hp = scanner.next();
+		    System.out.println(">휴대전화: ");
+		    String hp = scanner.nextLine();
 
-		System.out.println(">회사전화: ");
-		String tel = scanner.next();
+		    System.out.println(">회사전화: ");
+		    String tel = scanner.nextLine();
 
-		PhoneBookDAO dao = new PhoneBookDAOImplOracle();
+		    PhoneBookDAO dao = new PhoneBookDAOImplOracle();
 
-		PhoneBookVO newEntry = new PhoneBookVO();
-		newEntry.setName(name);
-		newEntry.setHp(hp);
-		newEntry.setTel(tel);
+		    PhoneBookVO newEntry = new PhoneBookVO();
+		    newEntry.setName(name);
+		    newEntry.setHp(hp);
+		    newEntry.setTel(tel);
 
-		dao.insert(newEntry);
-	}
+		    dao.insert(newEntry);
+		}
 
 	//-----------------------------------------------
 	
@@ -129,66 +130,49 @@ public class PhoneBookDAOApp {
 
 			// 삭제할 데이터의 인덱스를 입력 받음
 			System.out.print("삭제할 데이터의 인덱스를 입력하세요: ");
-			int index = scanner.nextInt();
+			
+			// nextLine으로 변경하여 문자열로 입력 받음
+			 int index = Integer.parseInt(scanner.nextLine()); 
 
-			// 입력 받은 인덱스를 기반으로 PhoneBookVO 객체 생성
-			PhoneBookVO newEntry = new PhoneBookVO();
-			newEntry.setId(index); // 세팅해줌
+	            if (index >= 0) {
+	                boolean deleteSuccess = dao.delete(index);
 
-			// 삭제할 데이터의 인덱스가 유효한지 확인 후 삭제
-			if (index >= 0) {
-				boolean deleteSuccess = dao.delete(newEntry);
-
-				if (deleteSuccess) {
-					System.out.println("데이터가 삭제되었습니다.");
-				} else {
-					System.out.println("데이터 삭제에 실패했습니다.");
-				}
-				
-			} else {
-				System.out.println("유효하지 않은 인덱스입니다.");
-			}
-
-		} catch (InputMismatchException e) {
-			System.out.println("잘못된 입력입니다. 정수를 입력하세요.");
-		}
-
-	}
+	                if (deleteSuccess) {
+	                    System.out.println("데이터가 삭제되었습니다.");
+	                } else {
+	                    System.out.println("데이터 삭제에 실패했습니다.");
+	                }
+	                
+	            } else {
+	                System.out.println("유효하지 않은 인덱스입니다.");
+	            }
+	        } catch (NumberFormatException e) { // 정수로 변환할 수 없는 경우 처리
+	            System.out.println("잘못된 입력입니다. 정수를 입력하세요.");
+	        }
+	    }
 	
 	//-----------------------------------------------
 
-	//해당 메서드가 검색 결과를 리턴하는 형태여야함
+	//인덱스를 리스트로부터 검색하는 메서드
 	
-	private static void search(Scanner scanner) {
-		
-		System.out.println();
-		System.out.println("<4. 검색 >");
-		
-		 // 검색할 아이디 입력 받음
-	    System.out.print("검색할PhoneBookVO id 입력하세요: ");
-	    int id = scanner.nextInt();
-	   
-		// PhoneBookDAO 인터페이스를 구현한 클래스의 인스턴스 생성
-	    PhoneBookDAO dao = new PhoneBookDAOImplOracle();
-	    
-	    // 입력 받은 이름을 기반으로 PhoneBookVO 객체를 생성하여 리스트에서 검색
-	     searchList = dao.search(id);
-	    
-		if (searchList.size() > 0) {
-			// iterator 불러오기
-			Iterator<PhoneBookVO> it = searchList.iterator();
-			// iterator 순회
-			while (it.hasNext()) {
-				PhoneBookVO vo = it.next();
-				System.out.printf("%d\t%s\t%s\t%s%n", 
-						vo.getId(), vo.getName(), vo.getHp(), vo.getTel());
+	 private static void search (Scanner scanner) {
+	
+			    System.out.print("검색할 id를 입력하세요: ");
+			    int id = Integer.parseInt(scanner.nextLine());
+
+			    PhoneBookDAO dao = new PhoneBookDAOImplOracle();
+			    PhoneBookVO vo = dao.search(id);
+
+			    if (vo != null) {
+			        System.out.printf("%d\t%s\t%s\t%s%n", vo.getId(), vo.getName(), vo.getHp(), vo.getTel());
+			    } else {
+			        System.out.println("해당 id의 연락처를 찾을 수 없습니다.");
+			    }
+			    
 			}
-
-		} else {
-			System.out.println("HAVE NO DATA");
-
-		}
 	}
 		
-	}
-
+	    
+	 		
+	
+	

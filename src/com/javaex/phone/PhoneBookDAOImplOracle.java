@@ -31,12 +31,13 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 			String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
 
 			//정의한 URL과 사용자 이름, 비밀번호를 사용하여 데이터베이스에 연결
-			conn = DriverManager.getConnection(dburl, DatabaseConfigPh.DB_USER, DatabaseConfigPh.DB_PASS);
+			conn = DriverManager.getConnection(dburl, 
+					DatabaseConfigPh.DB_USER, DatabaseConfigPh.DB_PASS);
 			
 		//catch 블록-> ClassNotFoundException이 발생하면, 드라이버를 찾을 수 없다는 메시지를 출력	
 		} catch (ClassNotFoundException e) {
-			System.err.println("CANNOT FIND DRIVER");
-//            throw new SQLException("Cannot find driver", e);
+			System.out.println("CANNOT FIND DRIVER");	
+		
 		}
 		
 		//데이터베이스에 성공적으로 연결되면, 연결된 Connection 객체를 반환
@@ -44,10 +45,7 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 		return conn;
 	}
 
-	
-
-	// --------오버라이딩 getList 메서드
-	// 구현--------------------------------------------------------------------------------------------
+	// 구현---------------------------------
 	@Override
 	public List<PhoneBookVO> getList() {
 
@@ -59,26 +57,29 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 
 		try {
 			conn = getConnection();
+			
 			stmt = conn.createStatement();
-					
-			String sql = "SELECT id, name, hp, tel FROM PHONE_BOOK ORDER BY id";
+			
+			String sql = "SELECT id, name, hp, tel FROM PHONE_BOOK";
 			
 			rs = stmt.executeQuery(sql);
 
+				
 				while (rs.next()) {
 					
-					int id = rs.getInt("id");
-					String name = rs.getString("name");
-					String hp = rs.getString("hp");
-					String tel = rs.getString("tel");
+					int phId = rs.getInt(1);
+		            String phName = rs.getString(2);
+		            String phHp = rs.getString(3);
+		            String phTel = rs.getString(4);
 
-					PhoneBookVO vo = new PhoneBookVO(id, name, hp, tel);
+					PhoneBookVO vo = new PhoneBookVO(phId, phName, phHp, phTel);
 					list.add(vo);
 
 				}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
 		} finally {
 			try {
 				if (rs != null)
@@ -88,15 +89,14 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 				if (conn != null)
 					conn.close();
 			} catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		}
 		
-		System.out.println("<1.리스트>");
 		return  list;
 	}
 
-	
+
 	//-----------------------------------------------------------------------------------------
 	
 
@@ -104,42 +104,39 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 	public boolean insert(PhoneBookVO phonebookvo) {
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;
+	    int rowsAffected = 0;
 
 	    try {
 	        conn = getConnection();
 	        
 	        // SQL 쿼리를 작성하여 새로운 데이터를 삽입
-	        String sql = "INSERT INTO PHONE_BOOK (id, name, hp, tel) VALUES (PHONE_BOOK_SEQ.NEXTVAL, ?, ?, ?)";
+	        String sql = "INSERT INTO PHONE_BOOK (id, name, hp, tel) " +
+	        				"VALUES (PHONE_BOOK_SEQ.NEXTVAL, ?, ?, ?)";
 	        
 	        // PreparedStatement를 사용하여 SQL 쿼리를 미리 컴파일하고 매개변수를 설정하여 SQL 인젝션을 방지
 	        pstmt = conn.prepareStatement(sql);
+	        
 	        pstmt.setString(1, phonebookvo.getName());
 	        pstmt.setString(2, phonebookvo.getHp());
 	        pstmt.setString(3, phonebookvo.getTel());
 	        
 	        // INSERT 쿼리 실행하고 성공 여부를 반환
-	        int rowsAffected = pstmt.executeUpdate();
-	        
-	        // 삽입된 행의 수가 1 이상이면 true 반환
-	        return rowsAffected > 0;
+	        rowsAffected = pstmt.executeUpdate();
 	        
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        
-	        // 삽입 실패를 나타내는 false 반환
-	        return false;
-	        
+	      
 	    } finally {
 	        try {
 	            // 리소스 닫기
-	            if (pstmt != null)
-	                pstmt.close();
-	            if (conn != null)
-	                conn.close();
+	            if (pstmt != null) pstmt.close();
+	            if (conn != null) conn.close();
+	                
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
 	    }
+	    return rowsAffected == 1;
 	}
 	
 	//-----------------------------------------------------------------------------------------
@@ -149,97 +146,87 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 	@Override
 	
 	//매개변수(파라미터)로 PhoneBookVO 객체를 받음
-	public boolean delete(PhoneBookVO phonebookvo) {
+	public boolean delete(int index) {
 		
 		//필요한 변수들 Connection, Statement 객체 선언,초기화
 		Connection conn = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
+		int rowsAffected = 0;
 		
-
 		//try-catch >>
 		try {
 			
+			conn = getConnection();
 			// SQL 쿼리를 작성하여 직접 ID 값을 포함.
-	        String sql = "DELETE FROM PHONE_BOOK WHERE ID = " + phonebookvo.getId();
-
-	        // DELETE 쿼리 실행후의 삭제된 행의 수를 반환
-	        @SuppressWarnings("null")
-			int rowsAffected = stmt.executeUpdate(sql);
+	        String sql = "DELETE FROM PHONE_BOOK WHERE ID = ?";
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setInt(1,index);
+	      
 	        
-	        // 삭제된 행의 수가 1 이상이면 true 를 반환
-	        return rowsAffected > 0;
-
+	        // DELETE 쿼리 실행후의 삭제된 행의 수를 반환
+			rowsAffected = pstmt.executeUpdate();
+	       
+			
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        
-	     // 삭제 실패를 나타내는 false를 반환
-	        return false; 
 	        
 	    } finally {
 	        try {
 	            // 리소스 닫기
-	            if (stmt != null)
-	                stmt.close();
-	            if (conn != null)
-	                conn.close();
+	        	if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+				
 	        } catch (Exception e) {
-	            e.printStackTrace();
+	           
 	        }
 	    }
+		return rowsAffected == 1;
 	}
 
 	//-----------------------------------------------------------------------------------------
 
 	@Override
-	public public PhoneBookVO search(int id) {
+	
 		
-		List<PhoneBookVO> newList = new ArrayList<>();
-
+	public PhoneBookVO search(int id) {
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;
 	    ResultSet rs = null;
-	    PhoneBookVO vo = null; // 검색 결과를 저장할 객체 초기화
+	    PhoneBookVO vo = null;
 
 	    try {
 	        conn = getConnection();
 
-	        // SQL 쿼리를 작성하여 PreparedStatement 객체를 생성합
-	        String sql = "SELECT * FROM PHONE_BOOK WHERE id = ?";
+	        String sql = "SELECT id, name, hp, tel FROM phonebook WHERE id = ?";
 	        pstmt = conn.prepareStatement(sql);
-
-	        // PreparedStatement에 검색할 리스트 정보를 설정
 	        pstmt.setInt(1, id);
 
-	        // SQL쿼리 실행후의 결과를 ResultSet에 저장
 	        rs = pstmt.executeQuery();
 
-	        // if문
 	        if (rs.next()) {
-	            int id = rs.getInt(1);
-	            String name = rs.getString(2);
-	            String hp = rs.getString(3);
-	            String tel = rs.getString(4);
+	            int listInfo1 = rs.getInt(1);
+	            String insertName = rs.getString(2);
+	            String insertPhone = rs.getString(3);
+	            String insertHomeNumber = rs.getString(4);
 
-	            vo = new PhoneBookVO(id, name, hp, tel);
-	            
+	            vo = new PhoneBookVO(listInfo1, insertName, insertPhone, insertHomeNumber);
 	        }
-	        
+
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        
+
 	    } finally {
+
 	        try {
-	        	if (rs != null) rs.close();
-				if (pstmt != null)pstmt.close();
-				if (conn != null) conn.close();
+	            if (rs != null) rs.close();
+	            if (pstmt != null) pstmt.close();
+	            if (conn != null) conn.close();
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
 	    }
 
-	    return newList;
+	    return vo;
 	}
-	
-
 
 }

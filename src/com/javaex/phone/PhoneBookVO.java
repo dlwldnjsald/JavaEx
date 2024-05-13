@@ -34,8 +34,8 @@ public class PhoneBookVO {
 				this.tel = tel;
 				
 			}
-
-			// 부분 필드 생성자 ----------------------------
+			
+			// 부분 필드 생성자----------------------------------------------
 			public PhoneBookVO(String name, String hp, String tel) {
 				super();
 				this.name = name;
@@ -44,7 +44,7 @@ public class PhoneBookVO {
 			}
 			
 			
-			
+			// getters,setters methods------------------------------------
 			public int getId() {
 				return id;
 			}
@@ -77,6 +77,7 @@ public class PhoneBookVO {
 				this.tel = tel;
 			}
 
+			// toString() methods override--------------------------------------
 			@Override
 			public String toString() {
 				return "PhoneBookVO [id=" + id + ", name=" + name + ", hp=" + hp + ", tel=" + tel + "]";
