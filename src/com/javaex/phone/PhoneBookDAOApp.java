@@ -17,7 +17,7 @@ public class PhoneBookDAOApp {
 		System.out.println("************************************************");
 		System.out.println("1. 리스트  2. 등록  3. 삭제  4. 검색  5. 종료");
 
-		boolean running = true;
+		boolean running = true; //
 
 		while (running) {
 
