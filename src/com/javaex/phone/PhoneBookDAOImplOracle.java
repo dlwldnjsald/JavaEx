@@ -111,7 +111,7 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 	        
 	        // SQL 쿼리를 작성하여 새로운 데이터를 삽입
 	        String sql = "INSERT INTO PHONE_BOOK (id, name, hp, tel) " +
-	        				"VALUES (PHONE_BOOK.NEXTVAL, ?, ?, ?)";
+	        				"VALUES (seq_phonebook_id .NEXTVAL, ?, ?, ?)";
 	        
 	        // PreparedStatement를 사용하여 SQL 쿼리를 미리 컴파일하고 매개변수를 설정하여 SQL 인젝션을 방지
 	        pstmt = conn.prepareStatement(sql);
@@ -122,6 +122,7 @@ public class PhoneBookDAOImplOracle implements PhoneBookDAO {
 	        
 	        // INSERT 쿼리 실행하고 성공 여부를 반환
 	        rowsAffected = pstmt.executeUpdate();
+	        
 	        
 	    } catch (SQLException e) {
 	        e.printStackTrace();

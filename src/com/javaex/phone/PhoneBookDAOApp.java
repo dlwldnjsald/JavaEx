@@ -113,8 +113,15 @@ public class PhoneBookDAOApp {
 		    newEntry.setHp(hp);
 		    newEntry.setTel(tel);
 
-		    dao.insert(newEntry);
-		}
+		    boolean isInserted = dao.insert(newEntry);
+		    
+		    if (isInserted) {
+		    	System.out.println("등록되었습니다.");
+		    } else {
+		    	System.out.println("등록에 실패하였습니다.");
+		    } 
+		
+	}
 
 	//-----------------------------------------------
 	
